@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Personal portfolio for Muhamed Nashaat, showcasing skills in software engineering, cybersecurity, and more.">
+<meta property="og:title" content="Muhamed Nashaat | Portfolio">
+<meta property="og:description" content="Explore Muhamed's projects, skills, and experience in software engineering and penetration testing.">
+<meta property="og:image" content="image.jpg">
+<meta property="og:type" content="website">
 <title>Muhamed Nashaat | Portfolio</title>
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -377,10 +382,11 @@ body.dark #contact p a.contact-link:hover {
 <body>
 
 <nav>
-  <div class="logo">0xNyteW0lf</div>
+   <a href="#top" class="logo">0xNyteW0lf</a>
   <ul>
     <li><a href="#about" tabindex="1">About</a></li>
     <li><a href="#skills" tabindex="2">Skills</a></li>
+    <li><a href="#experience" tabindex="3">Experience</a></li>
     <!-- <li><a href="#projects" tabindex="3">Projects</a></li> -->
     <li><a href="#contact" tabindex="4">Contact</a></li>
   </ul>
@@ -412,13 +418,46 @@ body.dark #contact p a.contact-link:hover {
   <section id="skills" class="reveal">
     <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Programming:</strong> C++, HTML, CSS, JavaScript</li>
-      <li><strong>Networking:</strong> CCNA (in progress), NTI training</li>
+      <li><strong>Programming:</strong> C++, HTML, CSS, JavaScript, Basics Python, Basics PHP, Bash Script </li>
+      <li><strong>Networking:</strong> CCNA  NTI training </li>
       <li><strong>Cybersecurity:</strong> Penetration Testing (learning phase), CTF preparation</li>
       <li><strong>Operating Systems:</strong> Linux, Windows</li>
       <li><strong>Tools & Platforms:</strong> VMware, Wireshark, VirtualBox, basic command-line tools</li>
     </ul>
   </section>
+       <!--Professional Experience   -->
+
+  <section id="experience" class="reveal">
+  <h2>Professional Experience</h2>
+
+  <div class="experience-item">
+    <h3>Student</h3>
+    <p><strong>Trainee – Digital Egypt Pioneers Program</strong><br>
+    Ministry of Communications and Information Technology (MCIT) — <em>2024</em></p>
+    <ul>
+      <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Trainee – National Telecommunication Institute (NTI)</h3>
+  
+    <ul>
+      <li>Attended hands-on sessions on network configuration, communication protocols, and telecom infrastructure.</li>
+      <li>Applied theoretical knowledge in real lab scenarios and simulations.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Self-Learning & Cybersecurity Practice</h3>
+    <p>Remote / Online — <em>Ongoing</em></p>
+    <ul>
+      <li>Completed online courses on ethical hacking, penetration testing, and cyber defense strategies.</li>
+      <li>Preparing for CTF (Capture The Flag) competitions to improve real-world problem-solving in cybersecurity.</li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- <section id="projects" class="reveal">
     <h2>Projects</h2>
@@ -433,12 +472,36 @@ body.dark #contact p a.contact-link:hover {
   <h2>Contact</h2>
   
   <!-- روابط التواصل -->
-  <p style="margin-bottom: 1.5rem;">
-    <a href="mailto:mohamednashaat424@gmail.com" target="_blank" class="contact-link"><i class="fas fa-envelope"></i> Email</a> |
-    <a href="https://wa.me/201001564034" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a> |
-    <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a> |
-    <a href="https://github.com/Mohamednashaat932" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
-  </p>
+<p style="margin-bottom: 1.5rem;">
+  <a href="mailto:mohamednashaat424@gmail.com" target="_blank" class="contact-link">
+    <i class="fas fa-envelope"></i> Email
+  </a> |
+
+  <a href="https://wa.me/201001564034" target="_blank" class="contact-link" aria-label="WhatsApp Chat">
+    <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp
+  </a> |
+
+  <a href="tel:+201001564034" class="contact-link" aria-label="Call Phone Number">
+    <i class="fas fa-phone" style="color: #006666;"></i> Call Me
+  </a> |
+
+  <a href="https://facebook.com/muhamed.nashaat.2025" target="_blank" class="contact-link" aria-label="Facebook Profile">
+    <i class="fab fa-facebook-f" style="color: #1877F2;"></i> Facebook
+  </a> |
+
+  <a href="https://instagram.com/themu7md27" target="_blank" class="contact-link" aria-label="Instagram Profile">
+    <i class="fab fa-instagram" style="color: #E4405F;"></i> Instagram
+  </a> |
+
+  <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank" class="contact-link">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a> |
+
+  <a href="https://github.com/Mohamednashaat932" target="_blank" class="contact-link">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+</p>
+
 
 
   <!-- فورم التواصل -->
@@ -501,6 +564,23 @@ body.dark #contact p a.contact-link:hover {
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
 </script>
+<script>
+  const revealSections = document.querySelectorAll('.reveal');
+
+  const revealOnScroll = () => {
+    revealSections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const isVisible = sectionTop < window.innerHeight - 100;
+      if (isVisible) {
+        section.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
 
 </body>
 </html>
