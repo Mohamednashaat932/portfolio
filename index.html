@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Personal portfolio for Muhamed Nashaat, showcasing skills in software engineering, cybersecurity, and more.">
-<meta property="og:title" content="Muhamed Nashaat | Portfolio">
-<meta property="og:description" content="Explore Muhamed's projects, skills, and experience in software engineering and penetration testing.">
+<meta name="description" content="Personal portfolio for Mohamed Nashaat, Junior Network Engineer specializing in Cisco networking, network security, and IT infrastructure.">
+<meta property="og:title" content="Mohamed Nashaat | Junior Network Engineer">
+<meta property="og:description" content="Explore Mohamed's projects, skills, and experience in network engineering, CCNA, and IT infrastructure.">
 <meta property="og:image" content="image.jpg">
 <meta property="og:type" content="website">
-<title>Muhamed Nashaat | Portfolio</title>
+<title>Mohamed Nashaat | Junior Network Engineer</title>
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
@@ -69,7 +69,8 @@
     list-style: none;
     margin: 0; padding: 0;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
   }
   nav ul li {
     font-weight: 600;
@@ -157,6 +158,18 @@
     font-size: 1.1rem;
     line-height: 1.7;
   }
+  .edu-item {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .edu-item .edu-date {
+    color: #006666;
+    font-weight: 600;
+  }
+  body.dark .edu-item .edu-date {
+    color: #33cccc;
+  }
   #skills ul {
     display: flex;
     flex-wrap: wrap;
@@ -185,7 +198,7 @@
   body.dark #skills li:hover {
     background: #66ffff;
   }
-  #projects ul {
+  #projects ul, #languages ul, #certificates ul {
     list-style: none;
     padding: 0;
   }
@@ -195,6 +208,35 @@
   }
   #projects li a {
     font-weight: 600;
+  }
+  .project-item {
+    margin-bottom: 1.5rem;
+  }
+  .project-item h3 {
+    margin-bottom: 0.3rem;
+    color: #006666;
+  }
+  body.dark .project-item h3 {
+    color: #33cccc;
+  }
+  .project-item ul {
+    margin-top: 0.4rem;
+    padding-left: 1.2rem;
+  }
+  .project-item ul li {
+    margin-bottom: 0.3rem;
+  }
+  #languages p, #certificates p {
+    font-size: 1.05rem;
+    margin: 0.4rem 0;
+  }
+  .cert-date {
+    color: #006666;
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+  body.dark .cert-date {
+    color: #33cccc;
   }
   #contact p {
     font-size: 1.1rem;
@@ -387,18 +429,20 @@ body.dark #contact p a.contact-link:hover {
     <li><a href="#about" tabindex="1">About</a></li>
     <li><a href="#skills" tabindex="2">Skills</a></li>
     <li><a href="#experience" tabindex="3">Experience</a></li>
-    <!-- <li><a href="#projects" tabindex="3">Projects</a></li> -->
-    <li><a href="#contact" tabindex="4">Contact</a></li>
+    <li><a href="#projects" tabindex="4">Projects</a></li>
+    <li><a href="#certificates" tabindex="5">Certificates</a></li>
+    <li><a href="#contact" tabindex="6">Contact</a></li>
   </ul>
   <button id="darkToggle" aria-label="Toggle Dark Mode" tabindex="10">Dark Mode</button>
 </nav>
 
 <header>
-  <img src="image.jpg" alt="0xNyteW0lf Profile Picture" />
-  <h1>Muhamed Nashaat Elmorsy Aboelraiat</h1>
+  <img src="image.jpg" alt="Mohamed Nashaat Profile Picture" />
+  <h1>Mohamed Nashaat Elmorsy Aboelraiat</h1>
+  <h3>Junior Network Engineer</h3>
   <p>
-    Software Engineer || Jr penetration tester || Bug Hunter || Top 16% THM || Trainee @DEPI @NTI @Gupco @Petrobel <br />
-    Communication and Computer Engineering MU S'26
+    Gharbia, Tanta, Egypt (ready to relocate) || CCNA Certified || Network Security Enthusiast <br />
+    Communication and Computer Engineering, Mansoura University, S'26
   </p>
       <!-- Download CV button -->
     <a href="Muhamed-Nashaat-CV9.25.pdf" download id="downloadCV" aria-label="Download CV">
@@ -410,38 +454,74 @@ body.dark #contact p a.contact-link:hover {
   <section id="about" class="reveal">
     <h2>About Me</h2>
     <p>
-      I am currently pursuing a Bachelor of  degree in Communications and Computer Engineering at Mansoura University, with an expected graduation in 2026 and a GPA of 3.3/4.0. 
-      My academic focus is on communication systems and computer engineering principles, complemented by practical experience gained through specialized training programs.
+      Junior Network Engineer with a strong interest in IT infrastructure, system administration, and networking.
+      Solid foundation in network configuration, troubleshooting, Windows Server administration, virtualization,
+      and basic network security.
     </p>
+    <div class="edu-item">
+      <strong>Bachelor of Science in Communications and Computer Engineering</strong> — Mansoura University<br>
+      <span class="edu-date">September 2021 – July 2026</span><br>
+      Grade: 3.27 / 4.00 (Very Good)
+    </div>
   </section>
 
   <section id="skills" class="reveal">
     <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Programming:</strong> C++, HTML, CSS, JavaScript, Basics Python, Basics PHP, Bash Script </li>
-      <li><strong>Networking:</strong> CCNA  NTI training </li>
-      <li><strong>Cybersecurity:</strong> Penetration Testing (learning phase), CTF preparation</li>
-      <li><strong>Operating Systems:</strong> Linux Admin1, Windows</li>
-      <li><strong>Tools & Platforms:</strong> VMware, VirtualBox,  Acunitax , Nikto , Wireshark, Nmap , dirp , gobuster , FFUF , Waybackurl , subfinder , sublist3r , Burp Suite ,  metasploit , SQLmap , meterpreter</li>
+      <li><strong>Networking Fundamentals:</strong> TCP/IP, OSI Model, Subnetting, IPv4/IPv6</li>
+      <li><strong>Routing Protocols:</strong> OSPF, EIGRP, RIP</li>
+      <li><strong>Switching:</strong> VLAN, STP, EtherChannel</li>
+      <li><strong>Network Services:</strong> DHCP, DNS, NAT, Active Directory, Group Policy</li>
+      <li><strong>Security:</strong> ACLs, VPN (IPsec), FortiGate Firewall</li>
+      <li><strong>Virtualization:</strong> VMware vSphere</li>
+      <li><strong>Operating Systems:</strong> Windows 10, Windows 11, Windows Server 2019, Kali Linux</li>
+      <li><strong>Tools:</strong> Cisco Packet Tracer, GNS3, EVE-ng, Wireshark</li>
+      <li><strong>Programming:</strong> C++, HTML, CSS, JavaScript, Basics Python, Basics PHP, Bash Script</li>
     </ul>
   </section>
-       <!--Professional Experience   -->
 
+  <!-- Internships / Experience -->
   <section id="experience" class="reveal">
-  <h2>Professional Experience</h2>
+  <h2>Internships</h2>
 
   <div class="experience-item">
-    <h3>Student</h3>
-    <p><strong>Trainee – Digital Egypt Pioneers Program</strong><br>
-    Ministry of Communications and Information Technology (MCIT) — <em>2024</em></p>
+    <h3>Petrobel (Belayim Petroleum Company) – Summer Intern</h3>
+    <p>Location: Abu Rudeis, South Sinai <br>
+    Duration: 13–19 September 2025</p>
     <ul>
-      <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
+      <li>Attended H₂S safety briefing on a drilling rig visit, learned emergency response procedures, and practiced using breathing apparatus.</li>
+      <li>Observed communication systems and radio operations used for field coordination at the Central and Radio Stations.</li>
+      <li>Learned hazard assessment and safe-work protocols applied in oil & gas sites (HSE).</li>
     </ul>
   </div>
 
   <div class="experience-item">
-    <h3>Trainee – National Telecommunication Institute (NTI)</h3>
-  
+    <h3>GUPCO (Gulf of Suez Petroleum Company) – Summer Internship</h3>
+    <p>Location: Ras Shukeir, Gulf of Suez <br>
+    Duration: 19–25 July 2025</p>
+    <p><strong>Participated in a comprehensive technical training covering both Telecommunication Systems and Information Technology Infrastructure, with hands-on exposure to real-world systems used in oil and gas field operations.</strong></p>
+    <ul>
+      <li><strong>PABX:</strong> Learned how the company's internal landline system operates, including routing calls and managing extensions.</li>
+      <li><strong>Microwave Communication Systems:</strong> Observed the setup and operation of microwave links used for long-distance data transmission between company sites.</li>
+      <li><strong>Navigation & Automation Systems:</strong> Gained insight into automated control systems and marine/field navigation technologies.</li>
+      <li><strong>TV Monitoring Station:</strong> Explored internal television broadcasting systems used for monitoring and communication within the company.</li>
+      <li><strong>Network and Cybersecurity:</strong> Understood the security protocols implemented to protect company data and network infrastructure.</li>
+      <li><strong>Data Center Operations:</strong> Trained on the components of a data center including servers, storage systems, power and cooling units.</li>
+      <li><strong>Fiber Optic Cable Splicing:</strong> Practiced the fusion splicing of fiber optic cables and terminating/connecting them to patch panels.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>Information Technology Institute (ITI) – Trainee</h3>
+    <p>Online — <em>May 2025 – September 2025</em></p>
+    <ul>
+      <li>Completed structured technical training in IT infrastructure and networking fundamentals.</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <h3>National Telecommunication Institute (NTI) – Trainee</h3>
+    <p>Mansoura — <em>March 2025 – April 2025</em></p>
     <ul>
       <li>Attended hands-on sessions on network configuration, communication protocols, and telecom infrastructure.</li>
       <li>Applied theoretical knowledge in real lab scenarios and simulations.</li>
@@ -449,73 +529,47 @@ body.dark #contact p a.contact-link:hover {
   </div>
 
   <div class="experience-item">
-    <h3>Self-Learning & Cybersecurity Practice</h3>
-    <p>Remote / Online — <em>Ongoing</em></p>
+    <h3>Digital Egypt Pioneers Program (MCIT) – Trainee</h3>
+    <p>Ministry of Communications and Information Technology — Mansoura — <em>April 2024 – September 2024</em></p>
     <ul>
-      <li>Completed online courses on ethical hacking, penetration testing, and cyber offense strategies.</li>
-      <li>Preparing for CTF (Capture The Flag) competitions to improve real-world problem-solving in cybersecurity.</li>
+      <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
     </ul>
   </div>
-      <div class="experience-item">
-    <h3> Summer Internship – GUPCO (Gulf of Suez Petroleum Company)
-</h3>
-    <p>Location: Ras Shukeir, Gulf of Suez <br>
-Duration: ( 19 July – 25 July)</p>
-<p><strong>Internship Overview:
-Participated in a comprehensive technical training covering both Telecommunication Systems and Information Technology Infrastructure. The training provided hands-on exposure to real-world systems used in oil and gas field operations.
-</strong><br>
-<h4> Telecommunications Department:</h4>
-    <ul>
-    <p><strong>PABX (Private Automatic Branch Exchange):</strong></p>
-      <li>Learned how the company’s internal landline system operates, including routing calls and managing extensions.</li>
+  </section>
+
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+
+    <div class="project-item">
+      <h3>Enterprise Network Infrastructure</h3>
+      <ul>
+        <li>Designed a 4-department network using VLANs, Inter-VLAN routing, and OSPF.</li>
+        <li>Configured DHCP, DNS, and NAT for internet access.</li>
+        <li>Implemented HSRP and EtherChannel to improve network availability.</li>
       </ul>
-    <ul>
-        <p><strong>Microwave Communication Systems:</strong></p>
-      <li>Observed the setup and operation of microwave links used for long-distance data transmission between company sites.</li>
-    </ul>
-       
-    <ul>
-        <p><strong>Navigation & Automation Systems:</strong></p>
-      <li>Gained insight into automated control systems and marine/field navigation technologies.
-</li>
-  </ul>
+    </div>
 
-    <ul>
-        <p><strong>TV Monitoring Station:</strong></p>
-      <li>Explored internal television broadcasting systems used for monitoring and communication within the company.
- <h4> IT Department:</h4>
-</li>
-    </ul>
-           <ul>
-         <p><strong>Network and Cybersecurity:</strong></p>
-      <li>Understood the security protocols implemented to protect company data and network infrastructure.
-</li>
-          </ul>
-    <ul>
-        <p><strong>Data Center Operations:</strong></p>
-      <li>Trained on the components of a data center including servers, storage systems, power and cooling units.
-</li>
-   </ul>
-           <ul>
-        <p><strong>Fiber Optic Cable Splicing:</strong></p>
-      <li>Practiced the fusion splicing of fiber optic cables and learned how to professionally terminate and connect them to patch panels.
-</li>
-           </ul>
-  </div>
-        <div class="experience-item">
-    <h3>  Petrobel (Belayim Petroleum Company) – Summer Intern </h3>
-    <p>Location: Abu Rudeis, South Sina <br>
-Duration: 13–19 Sep 2025</p>
-<p><ul>Internship Overview:
-During my one-week field training with Petrobel, I gained practical exposure to petroleum operations and safety practices.
+    <div class="project-item">
+      <h3>Secure and Resilient Enterprise Network</h3>
+      <ul>
+        <li>Designed and implemented a secure multi-site enterprise network using GNS3 and FortiGate.</li>
+        <li>Validated security controls through connectivity and failover testing.</li>
+      </ul>
+    </div>
+  </section>
 
-<li><strong>Drilling Rig Visit:</strong> Attended H₂S safety briefing, learned emergency response procedures, and practiced using breathing apparatus.</li>
+  <section id="certificates" class="reveal">
+    <h2>Certificates</h2>
+    <p>CCNA: Enterprise Networking, Security, and Automation — Cisco Networking Academy <span class="cert-date">May 2025</span></p>
+    <p>CCNA: Switching, Routing, and Wireless Essentials — Cisco Networking Academy <span class="cert-date">March 2025</span></p>
+    <p>CCNA: Introduction to Networks — Cisco Networking Academy <span class="cert-date">March 2025</span></p>
+  </section>
 
-<li><strong>Central & Radio Stations:</strong> Observed communication systems and radio operations used for field coordination.</li>
-
-<li><strong>Health, Safety & Environment (HSE):</strong> Learned hazard assessment and safe-work protocols applied in oil & gas sites.</li>
-</ul><br>
-  </div>
+  <section id="languages" class="reveal">
+    <h2>Languages</h2>
+    <p><strong>English</strong> — Conversational</p>
+    <p><strong>Arabic</strong> — Native</p>
+  </section>
 
   <section id="contact" class="reveal">
   <h2>Contact</h2>
@@ -575,7 +629,7 @@ During my one-week field training with Petrobel, I gained practical exposure to 
 </main>
 
 <footer>
-  &copy; 2025 Muhamed Nashaat. <br>All rights reserved.
+  &copy; 2025 Mohamed Nashaat. <br>All rights reserved.
 </footer>
 
 <script>
@@ -617,28 +671,6 @@ During my one-week field training with Petrobel, I gained practical exposure to 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
 </script>
-<script>
-  const revealSections = document.querySelectorAll('.reveal');
-
-  const revealOnScroll = () => {
-    revealSections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const isVisible = sectionTop < window.innerHeight - 100;
-      if (isVisible) {
-        section.classList.add('visible');
-      }
-    });
-  };
-
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
-
 
 </body>
 </html>
-
-
-
-
-
