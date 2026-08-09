@@ -1,519 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Personal portfolio for Mohamed Nashaat, NOC Engineer specializing in Cisco networking, network automation, and IT infrastructure.">
-<meta property="og:title" content="Mohamed Nashaat | NOC Engineer">
-<meta property="og:description" content="Explore Mohamed's projects, skills, and experience in network engineering, NOC operations, and IT infrastructure.">
-<meta property="og:image" content="image.jpg">
-<meta property="og:type" content="website">
-<title>Mohamed Nashaat | NOC Engineer</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2310182a'/%3E%3Ccircle cx='30' cy='30' r='7' fill='%23c69a52'/%3E%3Ccircle cx='70' cy='30' r='7' fill='%23c69a52'/%3E%3Ccircle cx='50' cy='70' r='7' fill='%23c69a52'/%3E%3Cpath d='M30 30L70 30M30 30L50 70M70 30L50 70' stroke='%23c69a52' stroke-width='2.5'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#faf9f6;
-    --panel:#ffffff;
-    --border:#e6e3dc;
-    --ink:#1c2431;
-    --muted:#5b6577;
-    --accent:#9c7a3f;
-    --accent-deep:#16305c;
-    --accent-soft:#f3ece0;
-    --side-bg:#101828;
-    --side-text:#eef1f6;
-    --side-muted:#8b9ab0;
-    --success:#2f7d55;
-    --font-display:'Fraunces', Georgia, serif;
-    --font-body:'Inter', 'Segoe UI', sans-serif;
-    --font-mono:'JetBrains Mono', ui-monospace, monospace;
-  }
-  *,*::before,*::after{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{
-    margin:0; padding:0;
-    font-family:var(--font-body);
-    background:var(--bg);
-    color:var(--ink);
-  }
-  a{ color:var(--accent-deep); text-decoration:none; transition:color .2s; }
-  a:hover{ color:var(--accent); }
-  ::selection{ background:var(--accent-soft); }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal portfolio for Mohamed Nashaat, NOC Engineer specializing in Cisco networking, network automation, and IT infrastructure.">
 
-  .layout{
-    display:grid;
-    grid-template-columns:340px 1fr;
-    min-height:100vh;
-  }
+  <title>Mohamed Nashaat | NOC Engineer</title>
 
-  /* ---------- sidebar ---------- */
-  aside{
-    background:var(--side-bg);
-    color:var(--side-text);
-    padding:3rem 2.4rem;
-    position:sticky;
-    top:0;
-    height:100vh;
-    overflow-y:auto;
-    display:flex;
-    flex-direction:column;
-  }
-  .avatar-img{
-    width:180px;
-    height:210px;
-    object-fit:cover;
-    object-position:center;
-    border-radius:50%;
-    border:4px solid #ffffff;
-    box-shadow:0 0 18px rgba(255,255,255,0.55);
-    margin-bottom:1.4rem;
-  }
-  aside h1{
-    font-family:var(--font-display);
-    font-size:1.7rem;
-    font-weight:600;
-    line-height:1.2;
-    margin:0 0 0.3rem;
-    color:#ffffff;
-  }
-  aside .role{
-    font-size:0.92rem; font-weight:500; color:var(--accent);
-    margin:0 0 1rem;
-    letter-spacing:0.01em;
-  }
-  .accent-rule{ width:40px; height:2px; background:var(--accent); border:none; margin:0 0 1.2rem; }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  .status-tag{
-    display:inline-flex; align-items:center; gap:7px;
-    font-family:var(--font-mono); font-size:0.7rem; font-weight:500;
-    color:#a9e0c1;
-    background:rgba(47,125,85,0.18);
-    border-radius:20px;
-    padding:0.32rem 0.75rem;
-    margin-bottom:1.6rem;
-    letter-spacing:0.03em;
-    width:fit-content;
-  }
-  .status-tag .dot{ width:6px; height:6px; border-radius:50%; background:#4ecb8b; }
+  <style>
 
-  aside .loc{ font-size:0.85rem; color:var(--side-muted); line-height:1.6; margin:0 0 1.6rem; }
+    :root{
+      --bg:#faf9f6;
+      --panel:#ffffff;
+      --border:#e6e3dc;
+      --ink:#1c2431;
+      --muted:#5b6577;
+      --accent:#9c7a3f;
+      --accent-deep:#16305c;
+      --accent-soft:#f3ece0;
+      --side-bg:#101828;
+      --side-text:#eef1f6;
+      --side-muted:#8b9ab0;
+      --success:#2f7d55;
+      --font-display:'Fraunces', Georgia, serif;
+      --font-body:'Inter', 'Segoe UI', sans-serif;
+      --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    }
 
-  #downloadCV{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    background:var(--accent);
-    color:var(--side-bg);
-    padding:0.7rem 1rem;
-    border-radius:5px;
-    font-weight:600;
-    font-size:0.86rem;
-    cursor:pointer;
-    margin-bottom:2.2rem;
-  }
-  #downloadCV:hover{ background:#b8935a; color:var(--side-bg); }
+    *,*::before,*::after{
+      box-sizing:border-box;
+    }
 
-  .side-nav{ list-style:none; margin:0 0 2.2rem; padding:0; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.4rem; }
-  .side-nav li a{
-    display:block; padding:0.4rem 0;
-    font-size:0.83rem; color:var(--side-muted); font-weight:500;
-  }
-  .side-nav li a:hover{ color:var(--accent); }
+    html{
+      scroll-behavior:smooth;
+    }
 
-  .side-contact{ margin-top:auto; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.4rem; }
-  .side-contact a{
-    display:flex; align-items:center; gap:9px;
-    font-size:0.83rem; color:var(--side-muted); padding:0.35rem 0;
-  }
-  .side-contact a:hover{ color:var(--accent); }
-  .side-contact i, .side-contact img{ width:16px; text-align:center; }
-  .side-contact img{ height:14px; filter:grayscale(1) brightness(1.6); }
+    body{
+      margin:0;
+      padding:0;
+      font-family:var(--font-body);
+      background:var(--bg);
+      color:var(--ink);
+    }
 
-  /* ---------- content ---------- */
-  main{ padding:4rem 4.5rem 5rem; max-width:820px; }
-  section{ margin-bottom:4rem; scroll-margin-top:2rem; }
+    a{
+      color:var(--accent-deep);
+      text-decoration:none;
+      transition:color .2s;
+    }
 
-  .sec-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:1.5rem; }
-  .sec-num{ font-family:var(--font-mono); font-size:0.78rem; color:var(--accent); font-weight:600; }
-  .sec-head h2{
-    font-family:var(--font-display);
-    font-size:1.55rem;
-    font-weight:600;
-    margin:0;
-    color:var(--ink);
-  }
-  .sec-line{ flex:1; height:0; border-top:1px solid var(--border); }
+    a:hover{
+      color:var(--accent);
+    }
 
-  #about p{ font-size:1.04rem; line-height:1.8; color:var(--ink); max-width:640px; }
+    ::selection{
+      background:var(--accent-soft);
+    }
 
-  .edu-item{
-    padding-left:1.2rem;
-    border-left:2px solid var(--accent-soft);
-    font-size:1rem; line-height:1.7;
-  }
-  .edu-item .edu-date{ color:var(--accent); font-weight:600; font-family:var(--font-mono); font-size:0.82rem; }
+    .layout{
+      display:grid;
+      grid-template-columns:340px 1fr;
+      min-height:100vh;
+    }
 
-  .skill-group{ margin-bottom:1.4rem; }
-  .skill-group .grp-title{
-    font-family:var(--font-mono); font-size:0.74rem; font-weight:600; color:var(--muted);
-    margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.04em;
-  }
-  .skill-chips{ display:flex; flex-wrap:wrap; gap:0.5rem; }
-  .skill-chips span{
-    font-size:0.84rem; font-weight:500;
-    background:var(--panel);
-    border:1px solid var(--border);
-    color:var(--ink);
-    padding:0.38rem 0.8rem;
-    border-radius:4px;
-  }
-  .soft-chips span{ background:var(--accent-soft); border-color:var(--accent-soft); color:#5f4a20; }
+    /* ---------- sidebar ---------- */
 
-  .timeline{ position:relative; padding-left:1.6rem; }
-  .timeline::before{ content:''; position:absolute; left:4px; top:6px; bottom:6px; width:1px; background:var(--border); }
-  .experience-item{ position:relative; margin-bottom:2.2rem; }
-  .experience-item::before{
-    content:''; position:absolute; left:-1.6rem; top:0.35rem; width:9px; height:9px;
-    border-radius:50%; background:var(--accent); border:2px solid var(--bg);
-  }
-  .experience-item h3{ margin:0 0 0.2rem; font-size:1.08rem; color:var(--ink); font-weight:700; }
-  .experience-item .role-tag{ font-size:0.85rem; color:var(--accent-deep); font-weight:600; }
-  .experience-item .meta{ font-family:var(--font-mono); font-size:0.78rem; color:var(--muted); margin:0.2rem 0 0.7rem; }
-  .experience-item ul{ margin:0; padding-left:1.1rem; }
-  .experience-item li{ margin-bottom:0.4rem; font-size:0.96rem; line-height:1.6; color:var(--ink); }
+    aside{
+      background:var(--side-bg);
+      color:var(--side-text);
+      padding:3rem 2.4rem;
+      position:sticky;
+      top:0;
+      height:100vh;
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+    }
 
-  .internship-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:0.7rem; margin-top:0.6rem; }
-  .internship-card{ border:1px solid var(--border); border-radius:6px; padding:0.85rem 1rem; background:var(--panel); }
-  .internship-card h4{ margin:0 0 0.2rem; font-size:0.92rem; color:var(--ink); font-weight:600; }
-  .internship-card p{ margin:0; font-size:0.8rem; color:var(--muted); font-family:var(--font-mono); }
+    .avatar-img{
+      width:180px;
+      height:210px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:50%;
+      border:4px solid #ffffff;
+      box-shadow:0 0 18px rgba(255,255,255,0.55);
+      margin-bottom:1.4rem;
+    }
 
-  .project-item{ margin-bottom:1.8rem; padding-bottom:1.8rem; border-bottom:1px solid var(--border); }
-  .project-item:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
-  .project-item h3{ margin:0 0 0.2rem; font-size:1.08rem; color:var(--ink); font-weight:700; }
-  .project-item .role-tag{ font-size:0.85rem; color:var(--accent-deep); font-weight:600; }
-  .project-item ul{ margin:0.7rem 0 0; padding-left:1.1rem; }
-  .project-item li{ margin-bottom:0.4rem; font-size:0.96rem; line-height:1.6; }
+    aside h1{
+      font-family:var(--font-display);
+      font-size:1.7rem;
+      font-weight:600;
+      line-height:1.2;
+      margin:0 0 0.3rem;
+      color:#ffffff;
+    }
 
-  .cert-list{ display:flex; flex-direction:column; }
-  .cert-row{
-    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
-    padding:0.9rem 0;
-    border-bottom:1px solid var(--border);
-  }
-  .cert-row:last-child{ border-bottom:none; }
-  .cert-row .cert-name{ font-size:0.98rem; font-weight:600; color:var(--ink); }
-  .cert-row .cert-issuer{ font-size:0.83rem; color:var(--muted); }
-  .cert-row .cert-date{ font-family:var(--font-mono); font-size:0.78rem; color:var(--accent); white-space:nowrap; }
+    aside .role{
+      font-size:0.92rem;
+      font-weight:500;
+      color:var(--accent);
+      margin:0 0 1rem;
+      letter-spacing:0.01em;
+    }
 
-  #contact .intro{ font-size:1rem; color:var(--muted); margin:0 0 1.6rem; max-width:560px; }
-  #contact form{
-    display:flex; flex-direction:column; gap:1.1rem;
-    max-width:460px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:1.6rem;
-    background:var(--panel);
-  }
-  #contact form label{ font-size:0.8rem; font-weight:600; color:var(--muted); }
-  #contact form input, #contact form textarea{
-    padding:0.65rem 0.85rem;
-    border-radius:5px;
-    border:1px solid var(--border);
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--font-body);
-    font-size:0.95rem;
-    resize:vertical;
-    transition:border-color .2s;
-  }
-  #contact form input:focus, #contact form textarea:focus{ outline:none; border-color:var(--accent); }
-  #contact form button{
-    background:var(--accent-deep);
-    color:#ffffff;
-    font-weight:600;
-    padding:0.75rem;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    transition:background-color .2s;
-  }
-  #contact form button:hover{ background:#0e2447; }
+    .accent-rule{
+      width:40px;
+      height:2px;
+      background:var(--accent);
+      border:none;
+      margin:0 0 1.2rem;
+    }
 
-  footer{ padding:2rem 4.5rem; color:var(--muted); font-size:0.82rem; border-top:1px solid var(--border); }
+    .status-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      font-family:var(--font-mono);
+      font-size:0.7rem;
+      font-weight:500;
+      color:#a9e0c1;
+      background:rgba(47,125,85,0.18);
+      border-radius:20px;
+      padding:0.32rem 0.75rem;
+      margin-bottom:1.6rem;
+      letter-spacing:0.03em;
+      width:fit-content;
+    }
 
-  @media (max-width:900px){
-    .layout{ grid-template-columns:1fr; }
-    aside{ position:static; height:auto; }
-    .side-nav{ display:flex; flex-wrap:wrap; gap:0.4rem 1rem; border-top:none; padding-top:0; }
-    .side-nav li a{ padding:0.2rem 0; }
-    main{ padding:3rem 1.6rem 4rem; }
-    footer{ padding:1.6rem; }
-  }
-</style>
+    .status-tag .dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#4ecb8b;
+    }
+
+    aside .loc{
+      font-size:0.85rem;
+      color:var(--side-muted);
+      line-height:1.6;
+      margin:0 0 1.6rem;
+    }
+
+    #downloadCV{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--accent);
+      color:var(--side-bg);
+      padding:0.7rem 1rem;
+      border-radius:5px;
+      font-weight:600;
+      font-size:0.86rem;
+      cursor:pointer;
+      margin-bottom:2.2rem;
+    }
+
+    #downloadCV:hover{
+      background:#b8935a;
+      color:var(--side-bg);
+    }
+
+    .side-contact{
+      margin-top:auto;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:1.4rem;
+    }
+
+    .side-contact a{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      font-size:0.83rem;
+      color:var(--side-muted);
+      padding:0.35rem 0;
+    }
+
+    .side-contact a:hover{
+      color:var(--accent);
+    }
+
+    .side-contact i,
+    .side-contact img{
+      width:16px;
+      text-align:center;
+    }
+
+    .side-contact img{
+      height:14px;
+      filter:grayscale(1) brightness(1.6);
+    }
+
+    /* ---------- content ---------- */
+
+    main{
+      padding:4rem 4.5rem 5rem;
+      max-width:820px;
+    }
+
+    section{
+      margin-bottom:4rem;
+      scroll-margin-top:2rem;
+    }
+
+    .sec-head{
+      display:flex;
+      align-items:baseline;
+      gap:14px;
+      margin-bottom:1.5rem;
+    }
+
+    .sec-num{
+      font-family:var(--font-mono);
+      font-size:0.78rem;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    .sec-head h2{
+      font-family:var(--font-display);
+      font-size:1.55rem;
+      font-weight:600;
+      margin:0;
+      color:var(--ink);
+    }
+
+    .sec-line{
+      flex:1;
+      height:0;
+      border-top:1px solid var(--border);
+    }
+
+    #about p{
+      font-size:1.04rem;
+      line-height:1.8;
+      color:var(--ink);
+      max-width:640px;
+    }
+
+    .edu-item{
+      padding-left:1.2rem;
+      border-left:2px solid var(--accent-soft);
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .edu-item .edu-date{
+      color:var(--accent);
+      font-weight:600;
+      font-family:var(--font-mono);
+      font-size:0.82rem;
+    }
+
+    .skill-group{
+      margin-bottom:1.4rem;
+    }
+
+    .skill-group .grp-title{
+      font-family:var(--font-mono);
+      font-size:0.74rem;
+      font-weight:600;
+      color:var(--muted);
+      margin-bottom:0.6rem;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+
+    .skill-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.5rem;
+    }
+
+    .skill-chips span{
+      font-size:0.84rem;
+      font-weight:500;
+      background:var(--panel);
+      border:1px solid var(--border);
+      color:var(--ink);
+      padding:0.38rem 0.8rem;
+      border-radius:4px;
+    }
+
+    .soft-chips span{
+      background:var(--accent-soft);
+      border-color:var(--accent-soft);
+      color:#5f4a20;
+    }
+
+    .timeline{
+      position:relative;
+      padding-left:1.6rem;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:4px;
+      top:6px;
+      bottom:6px;
+      width:1px;
+      background:var(--border);
+    }
+
+    .experience-item{
+      position:relative;
+      margin-bottom:2.2rem;
+    }
+
+    .experience-item::before{
+      content:'';
+      position:absolute;
+      left:-1.6rem;
+      top:0.35rem;
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--accent);
+      border:2px solid var(--bg);
+    }
+
+    .experience-item h3{
+      margin:0 0 0.2rem;
+      font-size:1.08rem;
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    .experience-item .role-tag{
+      font-size:0.85rem;
+      color:var(--accent-deep);
+      font-weight:600;
+    }
+
+    .experience-item .meta{
+      font-family:var(--font-mono);
+      font-size:0.78rem;
+      color:var(--muted);
+      margin:0.2rem 0 0.7rem;
+    }
+
+    .experience-item ul{
+      margin:0;
+      padding-left:1.1rem;
+    }
+
+    .experience-item li{
+      margin-bottom:0.4rem;
+      font-size:0.96rem;
+      line-height:1.6;
+      color:var(--ink);
+    }
+
+    .project-item{
+      margin-bottom:1.8rem;
+      padding-bottom:1.8rem;
+      border-bottom:1px solid var(--border);
+    }
+
+    .project-item:last-child{
+      border-bottom:none;
+      margin-bottom:0;
+      padding-bottom:0;
+    }
+
+    .project-item h3{
+      margin:0 0 0.2rem;
+      font-size:1.08rem;
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    .project-item .role-tag{
+      font-size:0.85rem;
+      color:var(--accent-deep);
+      font-weight:600;
+    }
+
+    .project-item ul{
+      margin:0.7rem 0 0;
+      padding-left:1.1rem;
+    }
+
+    .project-item li{
+      margin-bottom:0.4rem;
+      font-size:0.96rem;
+      line-height:1.6;
+    }
+
+    .cert-list{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .cert-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:1rem;
+      padding:0.9rem 0;
+      border-bottom:1px solid var(--border);
+    }
+
+    .cert-row:last-child{
+      border-bottom:none;
+    }
+
+    .cert-row .cert-name{
+      font-size:0.98rem;
+      font-weight:600;
+      color:var(--ink);
+    }
+
+    .cert-row .cert-issuer{
+      font-size:0.83rem;
+      color:var(--muted);
+    }
+
+    .cert-row .cert-date{
+      font-family:var(--font-mono);
+      font-size:0.78rem;
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    #contact .intro{
+      font-size:1rem;
+      color:var(--muted);
+      margin:0 0 1.6rem;
+      max-width:560px;
+    }
+
+    #contact form{
+      display:flex;
+      flex-direction:column;
+      gap:1.1rem;
+      max-width:460px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:1.6rem;
+      background:var(--panel);
+    }
+
+    #contact form label{
+      font-size:0.8rem;
+      font-weight:600;
+      color:var(--muted);
+    }
+
+    #contact form input,
+    #contact form textarea{
+      padding:0.65rem 0.85rem;
+      border-radius:5px;
+      border:1px solid var(--border);
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--font-body);
+      font-size:0.95rem;
+      resize:vertical;
+      transition:border-color .2s;
+    }
+
+    #contact form input:focus,
+    #contact form textarea:focus{
+      outline:none;
+      border-color:var(--accent);
+    }
+
+    #contact form button{
+      background:var(--accent-deep);
+      color:#ffffff;
+      font-weight:600;
+      padding:0.75rem;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      transition:background-color .2s;
+    }
+
+    #contact form button:hover{
+      background:#0e2447;
+    }
+
+    footer{
+      padding:2rem 4.5rem;
+      color:var(--muted);
+      font-size:0.82rem;
+      border-top:1px solid var(--border);
+    }
+
+    @media (max-width:900px){
+
+      .layout{
+        grid-template-columns:1fr;
+      }
+
+      aside{
+        position:static;
+        height:auto;
+      }
+
+      main{
+        padding:3rem 1.6rem 4rem;
+      }
+
+      footer{
+        padding:1.6rem;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
-<div class="layout">
-  <aside id="top">
-        <img src="image.jpg" alt="Mohamed Nashaat" class="avatar-img" />
-    <h1>Mohamed Nashaat</h1>
-    <p class="role">NOC Engineer</p>
-    <hr class="accent-rule" />
-    <div class="status-tag"><span class="dot"></span>available for opportunities</div>
-    <p class="loc">
-      Gharbia, Tanta, Egypt &middot; ready to relocate<br />
-      Bachelor of Engineering – Communications and Computer —  Mansoura University - 2021–2026
-    </p>
-    <a href="Mohamed_Nashaat_CV.docx" download id="downloadCV" aria-label="Download CV">
-      <i class="fas fa-arrow-down"></i> Download resume
-    </a>
-    <ul class="side-nav">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="side-contact">
-      <a href="mailto:mohamednashaat424@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      <a href="tel:+201001564034"><i class="fas fa-phone"></i> +20 100 156 4034</a>
-      <a href="https://wa.me/201001564034" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/Mohamednashaat932" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://facebook.com/muhamed.nashaat.2025" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-      <a href="https://instagram.com/themu7md27" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://tryhackme.com/p/0xNyteW0lf" target="_blank"><img src="https://tryhackme.com/img/favicon.png" alt="">TryHackMe</a>
-    </div>
-  </aside>
+  <div class="layout">
 
-  <main>
-    <section id="about">
-      <div class="sec-head"><span class="sec-num">01</span><h2>Professional summary</h2><span class="sec-line"></span></div>
-      <p>
-        Junior Network Engineer with a strong interest in IT infrastructure, system administration, and networking.
-        Solid foundation in network configuration, troubleshooting, Windows Server administration, virtualization,
-        and basic network security. Hands-on experience with routing and switching, VLANs, OSPF, DHCP, NAT, and
-        enterprise networking through practical labs. Familiar with Cisco technologies, VMware, Linux administration,
-        and FortiGate Firewall. Passionate about continuous learning and seeking an opportunity to contribute to a
-        dynamic IT team while developing expertise in enterprise networking and data center technologies.
+    <aside id="top">
+
+      <img src="image.jpg" alt="Mohamed Nashaat" class="avatar-img" />
+
+      <h1>Mohamed Nashaat</h1>
+
+      <p class="role">NOC Engineer</p>
+
+      <hr class="accent-rule" />
+
+      <div class="status-tag">
+        <span class="dot"></span>
+        available for opportunities
+      </div>
+
+      <p class="loc">
+        Gharbia, Tanta, Egypt &middot; ready to relocate<br />
+        B.Eng. Communications &amp; Computer, Mansoura University &middot; 2021–2026
       </p>
-    </section>
 
-    <section id="experience">
-      <div class="sec-head"><span class="sec-num">02</span><h2>Professional experience</h2><span class="sec-line"></span></div>
+      <a href="Mohamed_Nashaat_CV.docx" download id="downloadCV">
+        <i class="fas fa-arrow-down"></i>
+        Download resume
+      </a>
 
-      <div class="timeline">
-        <div class="experience-item">
-          <h3>NOC Automation Trainee</h3>
-          <p class="role-tag">National Telecommunication Institute (NTI)</p>
-          <p class="meta">July 2026 – Present</p>
+      <div class="side-contact">
+        <a href="mailto:mohamednashaat424@gmail.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+
+        <a href="tel:+201001564034">
+          <i class="fas fa-phone"></i> +20 100 156 4034
+        </a>
+
+        <a href="https://wa.me/201001564034" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+        <a href="https://github.com/Mohamednashaat932" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <a href="https://facebook.com/muhamed.nashaat.2025" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+
+        <a href="https://instagram.com/themu7md27" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://tryhackme.com/p/0xNyteW0lf" target="_blank">
+          <img src="https://tryhackme.com/img/favicon.png" alt="">
+          TryHackMe
+        </a>
+      </div>
+
+    </aside>
+
+    <main>
+
+      <section id="experience">
+
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <h2>Professional experience</h2>
+          <span class="sec-line"></span>
+        </div>
+
+        <div class="timeline">
+
+          <div class="experience-item">
+            <h3>NOC Automation Trainee</h3>
+            <p class="role-tag">National Telecommunication Institute (NTI)</p>
+            <p class="meta">July 2026 – Present</p>
+
+            <ul>
+              <li>Completed intensive training in network automation, NOC operations, and modern network infrastructure, covering Cisco CCNP-level routing and switching (ENCOR/ENARSI), VLANs, OSPF, EIGRP, BGP, ACLs, NAT, and SD-WAN concepts.</li>
+              <li>Gained hands-on experience in Python-based network automation, Ansible, Linux (Red Hat), cloud computing, virtualization, AWS fundamentals, and network DevOps tools through practical labs and simulations.</li>
+              <li>Developed professional skills in communication, teamwork, leadership, problem-solving, project management, and technical presentation through career development activities and a capstone project.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="grp-title" style="margin-top:1.6rem;">Internships</p>
+
+        <div class="timeline">
+
+          <div class="experience-item">
+            <h3>Petrobel (Belayim Petroleum Company)</h3>
+            <p class="role-tag">Summer Internship</p>
+            <p class="meta">Abu Rudeis, South Sinai &middot; 13–19 September 2025</p>
+
+            <ul>
+              <li>Attended H₂S safety briefing on a drilling rig visit, learned emergency response procedures, and practiced using breathing apparatus.</li>
+              <li>Observed communication systems and radio operations used for field coordination at the Central and Radio Stations.</li>
+              <li>Learned hazard assessment and safe-work protocols applied in oil &amp; gas sites (HSE).</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>GUPCO (Gulf of Suez Petroleum Company)</h3>
+            <p class="role-tag">Summer Internship</p>
+            <p class="meta">Ras Shukeir, Gulf of Suez &middot; 19–25 July 2025</p>
+
+            <p style="font-size:0.96rem; line-height:1.6; color:var(--ink); margin:0 0 0.7rem;">
+              Participated in a comprehensive technical training covering both Telecommunication Systems and Information Technology Infrastructure, with hands-on exposure to real-world systems used in oil and gas field operations.
+            </p>
+
+            <ul>
+              <li><strong>PABX:</strong> learned how the company's internal landline system operates, including routing calls and managing extensions.</li>
+              <li><strong>Microwave communication systems:</strong> observed the setup and operation of microwave links used for long-distance data transmission between company sites.</li>
+              <li><strong>Navigation &amp; automation systems:</strong> gained insight into automated control systems and marine/field navigation technologies.</li>
+              <li><strong>TV monitoring station:</strong> explored internal television broadcasting systems used for monitoring and communication within the company.</li>
+              <li><strong>Network and cybersecurity:</strong> understood the security protocols implemented to protect company data and network infrastructure.</li>
+              <li><strong>Data center operations:</strong> trained on the components of a data center including servers, storage systems, power and cooling units.</li>
+              <li><strong>Fiber optic cable splicing:</strong> practiced the fusion splicing of fiber optic cables and terminating/connecting them to patch panels.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Information Technology Institute (ITI)</h3>
+            <p class="role-tag">Trainee</p>
+            <p class="meta">Online &middot; May 2025 – September 2025</p>
+
+            <ul>
+              <li>Completed structured technical training in IT infrastructure and networking fundamentals.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>National Telecommunication Institute (NTI)</h3>
+            <p class="role-tag">Trainee</p>
+            <p class="meta">Mansoura &middot; March 2025 – April 2025</p>
+
+            <ul>
+              <li>Attended hands-on sessions on network configuration, communication protocols, and telecom infrastructure.</li>
+              <li>Applied theoretical knowledge in real lab scenarios and simulations.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Digital Egypt Pioneers Program (MCIT)</h3>
+            <p class="role-tag">Trainee</p>
+            <p class="meta">Ministry of Communications and Information Technology, Mansoura &middot; April 2024 – September 2024</p>
+
+            <ul>
+              <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section id="education">
+
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <h2>Education</h2>
+          <span class="sec-line"></span>
+        </div>
+
+        <div class="edu-item">
+          <strong>Bachelor of Engineering &mdash; Communications and Computer</strong>
+          &mdash; Mansoura University<br>
+
+          <span class="edu-date">September 2021 – July 2026</span>
+          &middot; Grade: 3.27 / 4.00 (Very Good)<br>
+
+          Graduation Project grade: A+
+        </div>
+
+      </section>
+
+
+      <section id="skills">
+
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <h2>Technical skills</h2>
+          <span class="sec-line"></span>
+        </div>
+
+        <div class="skill-group">
+          <div class="grp-title">Networking &amp; infrastructure</div>
+
+          <div class="skill-chips">
+            <span>CCNA</span>
+            <span>Incident troubleshooting</span>
+            <span>OSPF</span>
+            <span>EIGRP</span>
+            <span>VLANs</span>
+            <span>Subnetting</span>
+            <span>STP</span>
+            <span>Inter-VLAN routing</span>
+            <span>ACLs</span>
+            <span>NAT</span>
+            <span>TCP/IP</span>
+            <span>LAN/WAN</span>
+            <span>EVE-NG</span>
+            <span>GNS3</span>
+            <span>Packet Tracer</span>
+            <span>Physical Cisco devices</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="grp-title">Cloud &amp; Linux</div>
+
+          <div class="skill-chips">
+            <span>AWS (EC2, S3, IAM, VPC, Security Groups)</span>
+            <span>AWS Cloud Foundations Certified</span>
+            <span>Red Hat Linux</span>
+            <span>Windows Server Administration</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="grp-title">Programming &amp; tools</div>
+
+          <div class="skill-chips">
+            <span>Python</span>
+            <span>Wireshark</span>
+            <span>Burp Suite</span>
+            <span>Microsoft Office</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="grp-title">Languages</div>
+
+          <div class="skill-chips">
+            <span>Arabic (Native)</span>
+            <span>English</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="grp-title">Soft skills</div>
+
+          <div class="skill-chips soft-chips">
+            <span>Analytical thinking</span>
+            <span>Problem solving</span>
+            <span>Communication skills</span>
+            <span>Team collaboration</span>
+            <span>Adaptability</span>
+            <span>Continuous learning</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section id="projects">
+
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <h2>Academic projects</h2>
+          <span class="sec-line"></span>
+        </div>
+
+        <div class="project-item">
+          <h3>Secure and Resilient Enterprise Network</h3>
+          <p class="role-tag">Graduation Project</p>
+
           <ul>
-            <li>Completed intensive training in network automation, NOC operations, and modern network infrastructure, covering Cisco CCNP-level routing and switching (ENCOR/ENARSI), VLANs, OSPF, EIGRP, BGP, ACLs, NAT, and SD-WAN concepts.</li>
-            <li>Gained hands-on experience in Python-based network automation, Ansible, Linux (Red Hat), cloud computing, virtualization, AWS fundamentals, and network DevOps tools through practical labs and simulations.</li>
-            <li>Developed professional skills in communication, teamwork, leadership, problem-solving, project management, and technical presentation through career development activities and a capstone project.</li>
+            <li>Designed and implemented a secure multi-site enterprise network using GNS3 and FortiGate.</li>
+            <li>Validated security controls through connectivity and failover testing.</li>
           </ul>
         </div>
-      </div>
 
-      <p class="grp-title" style="margin-top:1.6rem;">Internships</p>
-      <div class="timeline">
+        <div class="project-item">
+          <h3>Enterprise Network Infrastructure</h3>
+          <p class="role-tag">GNS3 &middot; OSPF &middot; PAT &middot; VLANs</p>
 
-        <div class="experience-item">
-          <h3>Petrobel (Belayim Petroleum Company)</h3>
-          <p class="role-tag">Summer Internship</p>
-          <p class="meta">Abu Rudeis, South Sinai &middot; 13–19 September 2025</p>
           <ul>
-            <li>Attended H₂S safety briefing on a drilling rig visit, learned emergency response procedures, and practiced using breathing apparatus.</li>
-            <li>Observed communication systems and radio operations used for field coordination at the Central and Radio Stations.</li>
-            <li>Learned hazard assessment and safe-work protocols applied in oil &amp; gas sites (HSE).</li>
+            <li>Configured PAT (NAT Overload) on border routers to enable all private hosts to share a single public IP, conserving address space and enforcing security. Deployed OSPF as the dynamic routing protocol for automatic route advertisement and optimal path selection across all sites.</li>
+
+            <li>Applied inter-VLAN routing via router-on-a-stick with 802.1Q trunking, and validated full Layer 2-to-Layer 3 operation through ARP analysis, ping, and traceroute testing.</li>
           </ul>
         </div>
 
-        <div class="experience-item">
-          <h3>GUPCO (Gulf of Suez Petroleum Company)</h3>
-          <p class="role-tag">Summer Internship</p>
-          <p class="meta">Ras Shukeir, Gulf of Suez &middot; 19–25 July 2025</p>
-          <p style="font-size:0.96rem; line-height:1.6; color:var(--ink); margin:0 0 0.7rem;">
-            Participated in a comprehensive technical training covering both Telecommunication Systems and Information Technology Infrastructure, with hands-on exposure to real-world systems used in oil and gas field operations.
-          </p>
+        <div class="project-item">
+          <h3>Engibedia</h3>
+          <p class="role-tag">Graduation Project &middot; Educational Learning Platform</p>
+
           <ul>
-            <li><strong>PABX:</strong> learned how the company's internal landline system operates, including routing calls and managing extensions.</li>
-            <li><strong>Microwave communication systems:</strong> observed the setup and operation of microwave links used for long-distance data transmission between company sites.</li>
-            <li><strong>Navigation &amp; automation systems:</strong> gained insight into automated control systems and marine/field navigation technologies.</li>
-            <li><strong>TV monitoring station:</strong> explored internal television broadcasting systems used for monitoring and communication within the company.</li>
-            <li><strong>Network and cybersecurity:</strong> understood the security protocols implemented to protect company data and network infrastructure.</li>
-            <li><strong>Data center operations:</strong> trained on the components of a data center including servers, storage systems, power and cooling units.</li>
-            <li><strong>Fiber optic cable splicing:</strong> practiced the fusion splicing of fiber optic cables and terminating/connecting them to patch panels.</li>
+            <li>Developed a full-stack e-learning platform for managing online courses and educational content.</li>
+            <li>Implemented user authentication and role-based access (students, instructors, admins).</li>
+            <li>Enabled video streaming, PDF sharing, quizzes, and course enrollment.</li>
+            <li>Designed a responsive and user-friendly interface with a secure backend.</li>
           </ul>
         </div>
 
-        <div class="experience-item">
-          <h3>Information Technology Institute (ITI)</h3>
-          <p class="role-tag">Trainee</p>
-          <p class="meta">Online &middot; May 2025 – September 2025</p>
-          <ul>
-            <li>Completed structured technical training in IT infrastructure and networking fundamentals.</li>
-          </ul>
+      </section>
+
+
+      <section id="certifications">
+
+        <div class="sec-head">
+          <span class="sec-num">06</span>
+          <h2>Certifications &amp; courses</h2>
+          <span class="sec-line"></span>
         </div>
 
-        <div class="experience-item">
-          <h3>National Telecommunication Institute (NTI)</h3>
-          <p class="role-tag">Trainee</p>
-          <p class="meta">Mansoura &middot; March 2025 – April 2025</p>
-          <ul>
-            <li>Attended hands-on sessions on network configuration, communication protocols, and telecom infrastructure.</li>
-            <li>Applied theoretical knowledge in real lab scenarios and simulations.</li>
-          </ul>
+        <div class="cert-list">
+
+          <div class="cert-row">
+            <div>
+              <div class="cert-name">NOC Automation Track</div>
+              <div class="cert-issuer">National Telecommunication Institute (NTI)</div>
+            </div>
+
+            <div class="cert-date">2026</div>
+          </div>
+
+          <div class="cert-row">
+            <div>
+              <div class="cert-name">AWS Cloud Foundations Certificate</div>
+              <div class="cert-issuer">Amazon Web Services</div>
+            </div>
+
+            <div class="cert-date">2024</div>
+          </div>
+
+          <div class="cert-row">
+            <div>
+              <div class="cert-name">CCNA: Enterprise Networking, Security, and Automation</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+          </div>
+
+          <div class="cert-row">
+            <div>
+              <div class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+          </div>
+
+          <div class="cert-row">
+            <div>
+              <div class="cert-name">CCNA: Introduction to Networks</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="experience-item">
-          <h3>Digital Egypt Pioneers Program (MCIT)</h3>
-          <p class="role-tag">Trainee</p>
-          <p class="meta">Ministry of Communications and Information Technology, Mansoura &middot; April 2024 – September 2024</p>
-          <ul>
-            <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
-          </ul>
+      </section>
+
+
+      <section id="contact">
+
+        <div class="sec-head">
+          <span class="sec-num">07</span>
+          <h2>Contact</h2>
+          <span class="sec-line"></span>
         </div>
 
-      </div>
-    </section>
+        <p class="intro">
+          Open to NOC, network operations, and junior network engineering roles.
+          Reach out directly or send a message below.
+        </p>
 
-    <section id="education">
-      <div class="sec-head"><span class="sec-num">03</span><h2>Education</h2><span class="sec-line"></span></div>
-      <div class="edu-item">
-        <strong>Bachelor of Engineering &mdash; Communications and Computer</strong> &mdash; Mansoura University<br>
-        <span class="edu-date">September 2021 – July 2026</span> &middot; Grade: 3.27 / 4.00 (Very Good)<br>
-        Graduation Project grade: A+
-      </div>
-    </section>
+        <form action="https://formspree.io/f/xnndybyp" method="POST">
 
-    <section id="skills">
-      <div class="sec-head"><span class="sec-num">04</span><h2>Technical skills</h2><span class="sec-line"></span></div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
 
-      <div class="skill-group">
-        <div class="grp-title">Networking &amp; infrastructure</div>
-        <div class="skill-chips">
-          <span>CCNA</span><span>Incident troubleshooting</span><span>OSPF</span><span>EIGRP</span><span>VLANs</span>
-          <span>Subnetting</span><span>STP</span><span>Inter-VLAN routing</span><span>ACLs</span><span>NAT</span>
-          <span>TCP/IP</span><span>LAN/WAN</span><span>EVE-NG</span><span>GNS3</span><span>Packet Tracer</span>
-          <span>Physical Cisco devices</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="grp-title">Cloud &amp; Linux</div>
-        <div class="skill-chips">
-          <span>AWS (EC2, S3, IAM, VPC, Security Groups)</span><span>AWS Cloud Foundations Certified</span>
-          <span>Red Hat Linux</span><span>Windows Server Administration</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="grp-title">Programming &amp; tools</div>
-        <div class="skill-chips">
-          <span>Python</span><span>Wireshark</span><span>Burp Suite</span><span>Microsoft Office</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="grp-title">Languages</div>
-        <div class="skill-chips">
-          <span>Arabic (Native)</span><span>English</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="grp-title">Soft skills</div>
-        <div class="skill-chips soft-chips">
-          <span>Analytical thinking</span><span>Problem solving</span><span>Communication skills</span>
-          <span>Team collaboration</span><span>Adaptability</span><span>Continuous learning</span>
-        </div>
-      </div>
-    </section>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
 
-    <section id="projects">
-      <div class="sec-head"><span class="sec-num">05</span><h2>Academic projects</h2><span class="sec-line"></span></div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
 
-      <div class="project-item">
-        <h3>Secure and Resilient Enterprise Network</h3>
-        <p class="role-tag">Graduation Project</p>
-        <ul>
-          <li>Designed and implemented a secure multi-site enterprise network using GNS3 and FortiGate.</li>
-          <li>Validated security controls through connectivity and failover testing.</li>
-        </ul>
-      </div>
+          <button type="submit">Send message</button>
 
-      <div class="project-item">
-        <h3>Enterprise Network Infrastructure</h3>
-        <p class="role-tag">GNS3 &middot; OSPF &middot; PAT &middot; VLANs</p>
-        <ul>
-          <li>Configured PAT (NAT Overload) on border routers to enable all private hosts to share a single public IP, conserving address space and enforcing security. Deployed OSPF as the dynamic routing protocol for automatic route advertisement and optimal path selection across all sites.</li>
-          <li>Applied inter-VLAN routing via router-on-a-stick with 802.1Q trunking, and validated full Layer 2-to-Layer 3 operation through ARP analysis, ping, and traceroute testing.</li>
-        </ul>
-      </div>
+        </form>
 
-      <div class="project-item">
-        <h3>Engibedia</h3>
-        <p class="role-tag">Graduation Project &middot; Educational Learning Platform</p>
-        <ul>
-          <li>Developed a full-stack e-learning platform for managing online courses and educational content.</li>
-          <li>Implemented user authentication and role-based access (students, instructors, admins).</li>
-          <li>Enabled video streaming, PDF sharing, quizzes, and course enrollment.</li>
-          <li>Designed a responsive and user-friendly interface with a secure backend.</li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
-    <section id="certifications">
-      <div class="sec-head"><span class="sec-num">06</span><h2>Certifications &amp; courses</h2><span class="sec-line"></span></div>
-      <div class="cert-list">
-        <div class="cert-row">
-          <div><div class="cert-name">NOC Automation Track</div><div class="cert-issuer">National Telecommunication Institute (NTI)</div></div>
-          <div class="cert-date">2026</div>
-        </div>
-        <div class="cert-row">
-          <div><div class="cert-name">AWS Cloud Foundations Certificate</div><div class="cert-issuer">Amazon Web Services</div></div>
-          <div class="cert-date">2024</div>
-        </div>
-        <div class="cert-row">
-          <div><div class="cert-name">CCNA: Enterprise Networking, Security, and Automation</div><div class="cert-issuer">Cisco Networking Academy</div></div>
-        </div>
-        <div class="cert-row">
-          <div><div class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</div><div class="cert-issuer">Cisco Networking Academy</div></div>
-        </div>
-        <div class="cert-row">
-          <div><div class="cert-name">CCNA: Introduction to Networks</div><div class="cert-issuer">Cisco Networking Academy</div></div>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="sec-head"><span class="sec-num">07</span><h2>Contact</h2><span class="sec-line"></span></div>
-      <p class="intro">Open to NOC, network operations, and junior network engineering roles. Reach out directly or send a message below.</p>
+      <footer>
+        &copy; <span id="year">2026</span>
+        Mohamed Nashaat. All rights reserved.
+      </footer>
 
-      <form action="https://formspree.io/f/xnndybyp" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your name" />
+    </main>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
+  </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
-
-        <button type="submit">Send message</button>
-      </form>
-    </section>
-
-    <footer>
-      &copy; <span id="year">2026</span> Mohamed Nashaat. All rights reserved.
-    </footer>
-  </main>
-</div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
