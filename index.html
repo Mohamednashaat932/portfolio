@@ -1,927 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Personal portfolio for Mohamed Nashaat, NOC Engineer specializing in Cisco networking, network automation, and IT infrastructure.">
-
-  <title>Mohamed Nashaat | NOC Engineer</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Portfolio of Mohamed Nashaat, Network Engineer specializing in Cisco and Fortinet networking, NOC operations, and network automation.">
+<title>Mohamed Nashaat | Network Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2310182a'/%3E%3Ccircle cx='30' cy='30' r='7' fill='%23c69a52'/%3E%3Ccircle cx='70' cy='30' r='7' fill='%23c69a52'/%3E%3Ccircle cx='50' cy='70' r='7' fill='%23c69a52'/%3E%3Cpath d='M30 30L70 30M30 30L50 70M70 30L50 70' stroke='%23c69a52' stroke-width='2.5'/%3E%3C/svg%3E">
-  <style>
-
-    :root{
-      --bg:#faf9f6;
-      --panel:#ffffff;
-      --border:#e6e3dc;
-      --ink:#1c2431;
-      --muted:#5b6577;
-      --accent:#9c7a3f;
-      --accent-deep:#16305c;
-      --accent-soft:#f3ece0;
-      --side-bg:#101828;
-      --side-text:#eef1f6;
-      --side-muted:#8b9ab0;
-      --success:#2f7d55;
-      --font-display:'Fraunces', Georgia, serif;
-      --font-body:'Inter', 'Segoe UI', sans-serif;
-      --font-mono:'JetBrains Mono', ui-monospace, monospace;
-    }
-
-    *,*::before,*::after{
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      padding:0;
-      font-family:var(--font-body);
-      background:var(--bg);
-      color:var(--ink);
-    }
-
-    a{
-      color:var(--accent-deep);
-      text-decoration:none;
-      transition:color .2s;
-    }
-
-    a:hover{
-      color:var(--accent);
-    }
-
-    ::selection{
-      background:var(--accent-soft);
-    }
-
-    .layout{
-      display:grid;
-      grid-template-columns:340px 1fr;
-      min-height:100vh;
-    }
-
-    /* ---------- sidebar ---------- */
-
-    aside{
-      background:var(--side-bg);
-      color:var(--side-text);
-      padding:3rem 2.4rem;
-      position:sticky;
-      top:0;
-      height:100vh;
-      overflow-y:auto;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .avatar-img{
-      width:180px;
-      height:210px;
-      object-fit:cover;
-      object-position:center;
-      border-radius:50%;
-      border:4px solid #ffffff;
-      box-shadow:0 0 18px rgba(255,255,255,0.55);
-      margin-bottom:1.4rem;
-    }
-
-    aside h1{
-      font-family:var(--font-display);
-      font-size:1.7rem;
-      font-weight:600;
-      line-height:1.2;
-      margin:0 0 0.3rem;
-      color:#ffffff;
-    }
-
-    aside .role{
-      font-size:0.92rem;
-      font-weight:500;
-      color:var(--accent);
-      margin:0 0 1rem;
-      letter-spacing:0.01em;
-    }
-
-    .accent-rule{
-      width:40px;
-      height:2px;
-      background:var(--accent);
-      border:none;
-      margin:0 0 1.2rem;
-    }
-
-    .status-tag{
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      font-family:var(--font-mono);
-      font-size:0.7rem;
-      font-weight:500;
-      color:#a9e0c1;
-      background:rgba(47,125,85,0.18);
-      border-radius:20px;
-      padding:0.32rem 0.75rem;
-      margin-bottom:1.6rem;
-      letter-spacing:0.03em;
-      width:fit-content;
-    }
-
-    .status-tag .dot{
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#4ecb8b;
-    }
-
-    aside .loc{
-      font-size:0.85rem;
-      color:var(--side-muted);
-      line-height:1.6;
-      margin:0 0 1.6rem;
-    }
-
-    #downloadCV{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      background:var(--accent);
-      color:var(--side-bg);
-      padding:0.7rem 1rem;
-      border-radius:5px;
-      font-weight:600;
-      font-size:0.86rem;
-      cursor:pointer;
-      margin-bottom:2.2rem;
-    }
-
-    #downloadCV:hover{
-      background:#b8935a;
-      color:var(--side-bg);
-    }
-
-    .side-contact{
-      margin-top:auto;
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding-top:1.4rem;
-    }
-
-    .side-contact a{
-      display:flex;
-      align-items:center;
-      gap:9px;
-      font-size:0.83rem;
-      color:var(--side-muted);
-      padding:0.35rem 0;
-    }
-
-    .side-contact a:hover{
-      color:var(--accent);
-    }
-
-    .side-contact i,
-    .side-contact img{
-      width:16px;
-      text-align:center;
-    }
-
-    .side-contact img{
-      height:14px;
-      filter:grayscale(1) brightness(1.6);
-    }
-
-    /* ---------- content ---------- */
-
-    main{
-      padding:4rem 4.5rem 5rem;
-      max-width:820px;
-    }
-
-    section{
-      margin-bottom:4rem;
-      scroll-margin-top:2rem;
-    }
-
-    .sec-head{
-      display:flex;
-      align-items:baseline;
-      gap:14px;
-      margin-bottom:1.5rem;
-    }
-
-    .sec-num{
-      font-family:var(--font-mono);
-      font-size:0.78rem;
-      color:var(--accent);
-      font-weight:600;
-    }
-
-    .sec-head h2{
-      font-family:var(--font-display);
-      font-size:1.55rem;
-      font-weight:600;
-      margin:0;
-      color:var(--ink);
-    }
-
-    .sec-line{
-      flex:1;
-      height:0;
-      border-top:1px solid var(--border);
-    }
-
-    #about p{
-      font-size:1.04rem;
-      line-height:1.8;
-      color:var(--ink);
-      max-width:640px;
-    }
-
-    .edu-item{
-      padding-left:1.2rem;
-      border-left:2px solid var(--accent-soft);
-      font-size:1rem;
-      line-height:1.7;
-    }
-
-    .edu-item .edu-date{
-      color:var(--accent);
-      font-weight:600;
-      font-family:var(--font-mono);
-      font-size:0.82rem;
-    }
-
-    .skill-group{
-      margin-bottom:1.4rem;
-    }
-
-    .skill-group .grp-title{
-      font-family:var(--font-mono);
-      font-size:0.74rem;
-      font-weight:600;
-      color:var(--muted);
-      margin-bottom:0.6rem;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-
-    .skill-chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.5rem;
-    }
-
-    .skill-chips span{
-      font-size:0.84rem;
-      font-weight:500;
-      background:var(--panel);
-      border:1px solid var(--border);
-      color:var(--ink);
-      padding:0.38rem 0.8rem;
-      border-radius:4px;
-    }
-
-    .soft-chips span{
-      background:var(--accent-soft);
-      border-color:var(--accent-soft);
-      color:#5f4a20;
-    }
-
-    .timeline{
-      position:relative;
-      padding-left:1.6rem;
-    }
-
-    .timeline::before{
-      content:'';
-      position:absolute;
-      left:4px;
-      top:6px;
-      bottom:6px;
-      width:1px;
-      background:var(--border);
-    }
-
-    .experience-item{
-      position:relative;
-      margin-bottom:2.2rem;
-    }
-
-    .experience-item::before{
-      content:'';
-      position:absolute;
-      left:-1.6rem;
-      top:0.35rem;
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:var(--accent);
-      border:2px solid var(--bg);
-    }
-
-    .experience-item h3{
-      margin:0 0 0.2rem;
-      font-size:1.08rem;
-      color:var(--ink);
-      font-weight:700;
-    }
-
-    .experience-item .role-tag{
-      font-size:0.85rem;
-      color:var(--accent-deep);
-      font-weight:600;
-    }
-
-    .experience-item .meta{
-      font-family:var(--font-mono);
-      font-size:0.78rem;
-      color:var(--muted);
-      margin:0.2rem 0 0.7rem;
-    }
-
-    .experience-item ul{
-      margin:0;
-      padding-left:1.1rem;
-    }
-
-    .experience-item li{
-      margin-bottom:0.4rem;
-      font-size:0.96rem;
-      line-height:1.6;
-      color:var(--ink);
-    }
-
-    .project-item{
-      margin-bottom:1.8rem;
-      padding-bottom:1.8rem;
-      border-bottom:1px solid var(--border);
-    }
-
-    .project-item:last-child{
-      border-bottom:none;
-      margin-bottom:0;
-      padding-bottom:0;
-    }
-
-    .project-item h3{
-      margin:0 0 0.2rem;
-      font-size:1.08rem;
-      color:var(--ink);
-      font-weight:700;
-    }
-
-    .project-item .role-tag{
-      font-size:0.85rem;
-      color:var(--accent-deep);
-      font-weight:600;
-    }
-
-    .project-item ul{
-      margin:0.7rem 0 0;
-      padding-left:1.1rem;
-    }
-
-    .project-item li{
-      margin-bottom:0.4rem;
-      font-size:0.96rem;
-      line-height:1.6;
-    }
-
-    .cert-list{
-      display:flex;
-      flex-direction:column;
-    }
-
-    .cert-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:baseline;
-      gap:1rem;
-      padding:0.9rem 0;
-      border-bottom:1px solid var(--border);
-    }
-
-    .cert-row:last-child{
-      border-bottom:none;
-    }
-
-    .cert-row .cert-name{
-      font-size:0.98rem;
-      font-weight:600;
-      color:var(--ink);
-    }
-
-    .cert-row .cert-issuer{
-      font-size:0.83rem;
-      color:var(--muted);
-    }
-
-    .cert-row .cert-date{
-      font-family:var(--font-mono);
-      font-size:0.78rem;
-      color:var(--accent);
-      white-space:nowrap;
-    }
-
-    #contact .intro{
-      font-size:1rem;
-      color:var(--muted);
-      margin:0 0 1.6rem;
-      max-width:560px;
-    }
-
-    #contact form{
-      display:flex;
-      flex-direction:column;
-      gap:1.1rem;
-      max-width:460px;
-      border:1px solid var(--border);
-      border-radius:8px;
-      padding:1.6rem;
-      background:var(--panel);
-    }
-
-    #contact form label{
-      font-size:0.8rem;
-      font-weight:600;
-      color:var(--muted);
-    }
-
-    #contact form input,
-    #contact form textarea{
-      padding:0.65rem 0.85rem;
-      border-radius:5px;
-      border:1px solid var(--border);
-      background:var(--bg);
-      color:var(--ink);
-      font-family:var(--font-body);
-      font-size:0.95rem;
-      resize:vertical;
-      transition:border-color .2s;
-    }
-
-    #contact form input:focus,
-    #contact form textarea:focus{
-      outline:none;
-      border-color:var(--accent);
-    }
-
-    #contact form button{
-      background:var(--accent-deep);
-      color:#ffffff;
-      font-weight:600;
-      padding:0.75rem;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      transition:background-color .2s;
-    }
-
-    #contact form button:hover{
-      background:#0e2447;
-    }
-
-    footer{
-      padding:2rem 4.5rem;
-      color:var(--muted);
-      font-size:0.82rem;
-      border-top:1px solid var(--border);
-    }
-
-    @media (max-width:900px){
-
-      .layout{
-        grid-template-columns:1fr;
-      }
-
-      aside{
-        position:static;
-        height:auto;
-      }
-
-      main{
-        padding:3rem 1.6rem 4rem;
-      }
-
-      footer{
-        padding:1.6rem;
-      }
-    }
-
-  </style>
+<style>
+:root{
+  --bg:#f6f4ef; --panel:#fff; --border:#e5e1d8; --ink:#1c2431; --muted:#5b6577;
+  --gold:#b08a47; --gold-soft:#f3ece0; --navy:#0f1a30; --navy2:#16305c; --green:#4ecb8b;
+  --display:'Fraunces',Georgia,serif; --body:'Inter','Segoe UI',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(15,26,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:var(--display);font-weight:600;color:#fff;font-size:1.1rem}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:1.6rem}
+.links a{color:#aab6c8;font-size:.86rem;font-weight:500;transition:color .2s}
+.links a:hover{color:var(--gold)}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1d3a6b 0%,transparent 60%),var(--navy);color:#fff;padding:5rem 0 6.5rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(to bottom,#000 0%,transparent 85%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 .72rem var(--mono);color:#a9e0c1;background:rgba(47,125,85,.2);border:1px solid rgba(78,203,139,.25);padding:.35rem .8rem;border-radius:99px;margin-bottom:1.4rem}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(78,203,139,.2)}
+.hero h1{font-family:var(--display);font-size:3.2rem;line-height:1.1;margin:0 0 .5rem;font-weight:600}
+.hero .role{font-size:1.25rem;color:var(--gold);font-weight:500;margin:0 0 1.2rem}
+.hero .lead{color:#c3cddd;max-width:560px;margin:0 0 2rem;font-size:1rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:.75rem 1.3rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:.2s}
+.btn.primary{background:var(--gold);color:var(--navy)}
+.btn.primary:hover{background:#c9a35e;transform:translateY(-1px)}
+.btn.ghost{border:1px solid rgba(255,255,255,.25);color:#fff}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.socials{display:flex;gap:.6rem}
+.socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:10px;background:rgba(255,255,255,.07);color:#c3cddd;transition:.2s}
+.socials a:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+.socials img{width:17px;height:17px;filter:grayscale(1) brightness(1.7)}
+.socials a:hover img{filter:brightness(0.2)}
+.photo{justify-self:center;position:relative}
+.photo::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(176,138,71,.5);border-radius:50%}
+.avatar-img{width:250px;height:290px;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.4);display:block}
+
+/* stats */
+.stats{margin-top:-3.2rem;position:relative;z-index:2}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--navy2);line-height:1.2}
+.stat span{font-size:.8rem;color:var(--muted)}
+
+/* sections */
+section{padding:4.5rem 0 0;scroll-margin-top:60px}
+.eyebrow{font:600 .75rem var(--mono);color:var(--gold);text-transform:uppercase;letter-spacing:.12em}
+h2{font-family:var(--display);font-size:2rem;margin:.3rem 0 2rem;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.6rem;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-3px);border-color:#d9c9a6}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem}
+.about p{margin:0;font-size:1.03rem;color:#2b3547}
+.focus{display:grid;gap:.9rem}
+.focus div{display:flex;gap:.9rem;align-items:center;font-weight:600;font-size:.93rem}
+.focus i{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:var(--gold-soft);color:var(--gold)}
+
+/* experience */
+.tl{position:relative;padding-left:2rem;display:grid;gap:1.3rem}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),var(--border))}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-2rem;top:1.7rem;width:16px;height:16px;border-radius:50%;background:var(--panel);border:4px solid var(--gold)}
+.job.now::before{border-color:var(--green);box-shadow:0 0 0 5px rgba(78,203,139,.18)}
+.job-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.9rem}
+.job h3{margin:0;font-size:1.12rem}
+.job .org{color:var(--navy2);font-weight:600;font-size:.92rem}
+.date{font:500 .75rem var(--mono);background:var(--gold-soft);color:#7a5c25;padding:.35rem .7rem;border-radius:99px;height:fit-content;white-space:nowrap}
+.job.now .date{background:rgba(78,203,139,.15);color:#1f7a4d}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.points li{position:relative;padding-left:22px;font-size:.93rem;color:#2b3547}
+.points li::before{content:"";width:5px;height:5px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);transform:rotate(45deg);position:absolute;left:3px;top:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.chips span{font:500 .72rem var(--mono);background:#eef1f7;color:var(--navy2);padding:.3rem .65rem;border-radius:6px}
+
+/* skills */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.skill h3{display:flex;align-items:center;gap:.7rem;margin:0 0 1rem;font-size:.98rem}
+.skill h3 i{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:var(--navy);color:var(--gold);font-size:.9rem}
+.skill .chips{margin:0}
+.skill .chips span{background:var(--gold-soft);color:#5f4a20;font-family:var(--body);font-size:.78rem}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.proj{display:flex;flex-direction:column}
+.proj .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy2),var(--navy));color:var(--gold);font-size:1.15rem;margin-bottom:1rem}
+.proj small{font:500 .7rem var(--mono);color:var(--gold);text-transform:uppercase;letter-spacing:.06em}
+.proj h3{margin:.3rem 0 .8rem;font-size:1.08rem;line-height:1.3}
+.proj .points{margin-bottom:1rem}
+.proj .chips{margin-top:auto}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.cert{display:flex;gap:1rem;align-items:flex-start;padding:1.15rem 1.3rem}
+.cert .ico{flex:none;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--gold-soft);color:var(--gold)}
+.cert.hot .ico{background:var(--navy);color:var(--gold)}
+.cert b{display:block;font-size:.93rem;line-height:1.35}
+.cert small{display:block;color:var(--muted);font-size:.8rem;margin:.15rem 0 .4rem}
+.cert .date{display:inline-block;font-size:.7rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start}
+.contact p.intro{color:var(--muted);margin:0 0 1.5rem}
+.info{display:grid;gap:.8rem}
+.info a{display:flex;align-items:center;gap:.9rem;font-size:.92rem;font-weight:500;padding:.8rem 1rem;background:var(--panel);border:1px solid var(--border);border-radius:10px;transition:.2s}
+.info a:hover{border-color:var(--gold);transform:translateX(3px)}
+.info i{width:20px;text-align:center;color:var(--gold)}
+form{display:flex;flex-direction:column;gap:1rem}
+label{font-size:.8rem;font-weight:600;color:var(--muted)}
+input,textarea{width:100%;padding:.75rem .9rem;border-radius:8px;border:1px solid var(--border);background:var(--bg);font:inherit;font-size:.95rem;color:var(--ink);resize:vertical;transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,138,71,.15)}
+form button{background:var(--navy2);color:#fff;border:none;padding:.85rem;border-radius:8px;font-weight:600;cursor:pointer;transition:.2s;font-size:.95rem}
+form button:hover{background:var(--navy)}
+
+i{font-style:normal;display:inline-flex}
+.btn .ic{width:16px;height:16px}
+.proj .ico .ic{width:20px;height:20px}
+.ic{width:18px;height:18px;fill:currentColor;flex:none}
+.info .ic{width:20px;height:20px;color:var(--gold)}
+footer{margin-top:5rem;background:var(--navy);color:#8b9ab0;text-align:center;padding:1.6rem;font-size:.82rem}
+
+@media(max-width:900px){
+  .links{display:none}
+  .hero{padding:3.5rem 0 5.5rem}
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero .lead{margin-inline:auto}.btns,.socials{justify-content:center}
+  .photo{order:-1}.avatar-img{width:190px;height:220px}
+  .hero h1{font-size:2.4rem}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .about,.contact,.certs{grid-template-columns:1fr}
+  .grid3,.projects{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-linkedin" viewBox="0 0 448 512"><path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></symbol><symbol id="i-github" viewBox="0 0 512 512"><path d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"/></symbol><symbol id="i-whatsapp" viewBox="0 0 448 512"><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/></symbol><symbol id="i-mail" viewBox="0 0 512 512"><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></symbol><symbol id="i-phone" viewBox="0 0 512 512"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></symbol><symbol id="i-redhat" viewBox="0 0 512 512"><path d="M341.5 285.6c33.7 0 82.3-6.9 82.3-47 .2-6.7 .9-1.8-20.9-96.2-4.6-19.1-8.7-27.8-42.3-44.6-26.1-13.3-82.9-35.4-99.7-35.4-15.7 0-20.2 20.2-38.9 20.2-18 0-31.3-15.1-48.1-15.1-16.1 0-26.7 11-34.8 33.6-27.5 77.6-26.3 74.3-26.1 78.3 0 24.8 97.6 106.1 228.5 106.1zM429 254.8c4.7 22 4.7 24.3 4.7 27.2 0 37.7-42.3 58.6-98 58.6-125.7 .1-235.9-73.6-235.9-122.3 0-6.8 1.4-13.5 4.1-19.7-45.2 2.3-103.8 10.3-103.8 62 0 84.7 200.6 189 359.5 189 121.8 0 152.5-55.1 152.5-98.6 0-34.2-29.6-73-82.9-96.2z"/></symbol><symbol id="i-windows" viewBox="0 0 448 512"><path d="M0 93.7l183.6-25.3 0 177.4-183.6 0 0-152.1zM0 418.3l183.6 25.3 0-175.2-183.6 0 0 149.9zm203.8 28l244.2 33.7 0-211.6-244.2 0 0 177.9zm0-380.6l0 180.1 244.2 0 0-213.8-244.2 33.7z"/></symbol><symbol id="i-aws" viewBox="0 0 640 512"><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3 .9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6 .4 47 6.3l0-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28l0 69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9 .7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2 .1-2.4 .8-3.4s1.8-1.6 3-1.8c.2 0-2.1 0 22.2 0 8.8-.9 11.6 6 12.6 10.4L274.9 220.8 308.1 80c.5-3.2 2.9-11.1 12.8-10.2l17.2 0c2.2-.2 11.1-.5 12.7 10.4L384.1 222.7 421 80.1c.5-2.2 2.7-11.4 12.7-10.4l19.7 0c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4l-18.7 0c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7l-18.3 0 0 0zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1l0-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7l0 10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9 .9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zm40.2 104.9c-70 51.7-171.7 79.2-258.5 79.2-117.1 .8-230.3-42.3-317.3-120.7-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4zm29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8 .8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6 7.5 9.5-2.1 75.4-39.6 106.9-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></symbol><symbol id="s-bug" viewBox="0 0 576 512"><path d="M192 96c0-53 43-96 96-96s96 43 96 96l0 3.6c0 15.7-12.7 28.4-28.4 28.4l-135.1 0c-15.7 0-28.4-12.7-28.4-28.4l0-3.6zm345.6 12.8c10.6 14.1 7.7 34.2-6.4 44.8l-97.8 73.3c5.3 8.9 9.3 18.7 11.8 29.1l98.8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0 0 32c0 2.6-.1 5.3-.2 7.9l83.4 62.5c14.1 10.6 17 30.7 6.4 44.8s-30.7 17-44.8 6.4l-63.1-47.3c-23.2 44.2-66.5 76.2-117.7 83.9L312 280c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 230.2c-51.2-7.7-94.5-39.7-117.7-83.9L83.2 473.6c-14.1 10.6-34.2 7.7-44.8-6.4s-7.7-34.2 6.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9l0-32-96 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l98.8 0c2.5-10.4 6.5-20.2 11.8-29.1L44.8 153.6c-14.1-10.6-17-30.7-6.4-44.8s30.7-17 44.8-6.4L192 184c12.3-5.1 25.8-8 40-8l112 0c14.2 0 27.7 2.8 40 8l108.8-81.6c14.1-10.6 34.2-7.7 44.8 6.4z"/></symbol><symbol id="s-diagram-project" viewBox="0 0 512 512"><path d="M0 80C0 53.5 21.5 32 48 32l96 0c26.5 0 48 21.5 48 48l0 16 128 0 0-16c0-26.5 21.5-48 48-48l96 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-16-128 0 0 16c0 7.3-1.7 14.3-4.6 20.5l68.6 91.5 80 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-96c0-7.3 1.7-14.3 4.6-20.5L128 224 48 224c-26.5 0-48-21.5-48-48L0 80z"/></symbol><symbol id="s-download" viewBox="0 0 448 512"><path d="M256 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 210.7-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 242.7 256 32zM64 320c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-46.9 0-56.6 56.6c-31.2 31.2-81.9 31.2-113.1 0L110.9 320 64 320zm304 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></symbol><symbol id="s-gears" viewBox="0 0 640 512"><path d="M415.9 210.5c12.2-3.3 25 2.5 30.5 13.8L465 261.9c10.3 1.4 20.4 4.2 29.9 8.1l35-23.3c10.5-7 24.4-5.6 33.3 3.3l19.2 19.2c8.9 8.9 10.3 22.9 3.3 33.3l-23.3 34.9c1.9 4.7 3.6 9.6 5 14.7 1.4 5.1 2.3 10.1 3 15.2l37.7 18.6c11.3 5.6 17.1 18.4 13.8 30.5l-7 26.2c-3.3 12.1-14.6 20.3-27.2 19.5l-42-2.7c-6.3 8.1-13.6 15.6-21.9 22l2.7 41.9c.8 12.6-7.4 24-19.5 27.2l-26.2 7c-12.2 3.3-24.9-2.5-30.5-13.8l-18.6-37.6c-10.3-1.4-20.4-4.2-29.9-8.1l-35 23.3c-10.5 7-24.4 5.6-33.3-3.3l-19.2-19.2c-8.9-8.9-10.3-22.8-3.3-33.3l23.3-35c-1.9-4.7-3.6-9.6-5-14.7s-2.3-10.2-3-15.2l-37.7-18.6c-11.3-5.6-17-18.4-13.8-30.5l7-26.2c3.3-12.1 14.6-20.3 27.2-19.5l41.9 2.7c6.3-8.1 13.6-15.6 21.9-22l-2.7-41.8c-.8-12.6 7.4-24 19.5-27.2l26.2-7zM448.4 340a44 44 0 1 0 .1 88 44 44 0 1 0 -.1-88zM224.9-45.5l26.2 7c12.1 3.3 20.3 14.7 19.5 27.2l-2.7 41.8c8.3 6.4 15.6 13.8 21.9 22l42-2.7c12.5-.8 23.9 7.4 27.2 19.5l7 26.2c3.2 12.1-2.5 24.9-13.8 30.5l-37.7 18.6c-.7 5.1-1.7 10.2-3 15.2s-3.1 10-5 14.7l23.3 35c7 10.5 5.6 24.4-3.3 33.3L307.3 262c-8.9 8.9-22.8 10.3-33.3 3.3L239 242c-9.5 3.9-19.6 6.7-29.9 8.1l-18.6 37.6c-5.6 11.3-18.4 17-30.5 13.8l-26.2-7c-12.2-3.3-20.3-14.7-19.5-27.2l2.7-41.9c-8.3-6.4-15.6-13.8-21.9-22l-42 2.7c-12.5 .8-23.9-7.4-27.2-19.5l-7-26.2c-3.2-12.1 2.5-24.9 13.8-30.5l37.7-18.6c.7-5.1 1.7-10.1 3-15.2 1.4-5.1 3-10 5-14.7L55.1 46.5c-7-10.5-5.6-24.4 3.3-33.3L77.6-6c8.9-8.9 22.8-10.3 33.3-3.3l35 23.3c9.5-3.9 19.6-6.7 29.9-8.1l18.6-37.6c5.6-11.3 18.3-17 30.5-13.8zM192.4 84a44 44 0 1 0 0 88 44 44 0 1 0 0-88z"/></symbol><symbol id="s-graduation-cap" viewBox="0 0 576 512"><path d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"/></symbol><symbol id="s-language" viewBox="0 0 576 512"><path d="M160 0c17.7 0 32 14.3 32 32l0 32 128 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-9.6 0-8.4 23.1c-16.4 45.2-41.1 86.5-72.2 122 14.2 8.8 29 16.6 44.4 23.5l50.4 22.4 62.2-140c5.1-11.6 16.6-19 29.2-19s24.1 7.4 29.2 19l128 288c7.2 16.2-.1 35.1-16.2 42.2s-35.1-.1-42.2-16.2l-20-45-157.5 0-20 45c-7.2 16.2-26.1 23.4-42.2 16.2s-23.4-26.1-16.2-42.2l39.8-89.5-50.4-22.4c-23-10.2-45-22.4-65.8-36.4-21.3 17.2-44.6 32.2-69.5 44.7L78.3 380.6c-15.8 7.9-35 1.5-42.9-14.3s-1.5-35 14.3-42.9l34.5-17.3c16.3-8.2 31.8-17.7 46.4-28.3-13.8-12.7-26.8-26.4-38.9-40.9L81.6 224.7c-11.3-13.6-9.5-33.8 4.1-45.1s33.8-9.5 45.1 4.1l10.2 12.2c11.5 13.9 24.1 26.8 37.4 38.7 27.5-30.4 49.2-66.1 63.5-105.4l.5-1.2-210.3 0C14.3 128 0 113.7 0 96S14.3 64 32 64l96 0 0-32c0-17.7 14.3-32 32-32zM416 270.8L365.7 384 466.3 384 416 270.8z"/></symbol><symbol id="s-network-wired" viewBox="0 0 576 512"><path d="M248 88l80 0 0 48-80 0 0-48zm-8-56c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l16 0 0 32-224 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0 0 32-16 0c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l96 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-16 0 0-32 192 0 0 32-16 0c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l96 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-16 0 0-32 96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-224 0 0-32 16 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-96 0zM448 376l8 0 0 48-80 0 0-48 72 0zm-256 0l8 0 0 48-80 0 0-48 72 0z"/></symbol><symbol id="s-paper-plane" viewBox="0 0 576 512"><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z"/></symbol><symbol id="s-route" viewBox="0 0 512 512"><path d="M512 96c0 50.2-59.1 125.1-84.6 155-3.8 4.4-9.4 6.1-14.5 5L320 256c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96 43 96 96s-43 96-96 96l-276.4 0c8.7-9.9 19.3-22.6 30-36.8 6.3-8.4 12.8-17.6 19-27.2L416 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0c-53 0-96-43-96-96s43-96 96-96l39.8 0c-21-31.5-39.8-67.7-39.8-96 0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8-25.2-27.4-85-97.9-85-148.4 0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></symbol><symbol id="s-server" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96l0 64c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-64c0-35.3-28.7-64-64-64L64 32zm216 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64l0 64c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-64c0-35.3-28.7-64-64-64L64 288zm216 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></symbol><symbol id="s-shield-halved" viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0zm0 66.8l0 378.1c138-66.8 175.1-214.8 176-303.4l-176-74.6 0 0z"/></symbol><symbol id="s-sitemap" viewBox="0 0 512 512"><path d="M192 64c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-8 0 0 64 120 0c39.8 0 72 32.2 72 72l0 56 8 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l8 0 0-56c0-13.3-10.7-24-24-24l-120 0 0 80 8 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l8 0 0-80-120 0c-13.3 0-24 10.7-24 24l0 56 8 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l8 0 0-56c0-39.8 32.2-72 72-72l120 0 0-64-8 0c-17.7 0-32-14.3-32-32l0-64z"/></symbol><symbol id="s-ticket" viewBox="0 0 576 512"><path d="M64 64C28.7 64 0 92.7 0 128l0 64C0 200.8 7.4 207.7 15.7 210.6 34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320l0 64c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-64c0-8.8-7.4-15.7-15.7-18.6-18.8-6.5-32.3-24.4-32.3-45.4s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6l0-64c0-35.3-28.7-64-64-64L64 64zM416 336l0-160-256 0 0 160 256 0zM112 160c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32l0 192c0 17.7-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32l0-192z"/></symbol><symbol id="s-user-secret" viewBox="0 0 448 512"><path d="M171-16c-36.4 0-57.8 58.3-68.3 112L72 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 32c0 17 3.3 33.2 9.3 48l-9.3 0 0 0-20.5 0c-15.2 0-27.5 12.3-27.5 27.5 0 3 .5 5.9 1.4 8.7l28.9 86.6C40.2 379.6 16 428.1 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-54.2-24.2-102.7-62.3-135.4l28.9-86.6c.9-2.8 1.4-5.7 1.4-8.7 0-15.2-12.3-27.5-27.5-27.5l-20.5 0 0 0-9.3 0c6-14.8 9.3-31 9.3-48l0-32 24 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-30.7 0c-10.4-53.7-31.9-112-68.3-112-9.6 0-19 3.9-27.5 8.2-8.2 4.1-18.4 7.8-25.5 7.8s-17.3-3.7-25.5-7.8C190-12.1 180.6-16 171-16zm93.7 484.4l-24.8-70.9 27.9-32.5c2.7-3.2 4.2-7.2 4.2-11.4 0-9.7-7.8-17.5-17.5-17.5l-61 0c-9.7 0-17.5 7.8-17.5 17.5 0 4.2 1.5 8.2 4.2 11.4l27.9 32.5-24.8 70.9-57-180.4 35.7 0c18.4 10.2 39.5 16 62 16s43.6-5.8 62-16l35.7 0-57 180.4zM224 256c-34.7 0-64.2-22.1-75.3-53 5.7 3.2 12.3 5 19.3 5l12.4 0c16.5 0 31.1-10.6 36.3-26.2 2.3-7 12.2-7 14.5 0 5.2 15.6 19.9 26.2 36.3 26.2l12.4 0c7 0 13.6-1.8 19.3-5-11.1 30.9-40.6 53-75.3 53z"/></symbol><symbol id="s-users" viewBox="0 0 640 512"><path d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"/></symbol><symbol id="s-wifi" viewBox="0 0 576 512"><path d="M288 96c-90.9 0-173.2 36-233.7 94.6-12.7 12.3-33 12-45.2-.7s-12-33 .7-45.2C81.7 74.9 179.9 32 288 32S494.3 74.9 566.3 144.7c12.7 12.3 13 32.6 .7 45.2s-32.6 13-45.2 .7C461.2 132 378.9 96 288 96zM240 432a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM168 326.2c-11.7 13.3-31.9 14.5-45.2 2.8s-14.5-31.9-2.8-45.2C161 237.4 221.1 208 288 208s127 29.4 168 75.8c11.7 13.3 10.4 33.5-2.8 45.2s-33.5 10.4-45.2-2.8C378.6 292.9 335.8 272 288 272s-90.6 20.9-120 54.2z"/></symbol></svg>
 
-  <div class="layout">
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Mohamed <span>Nashaat</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <aside id="top">
-
-      <img src="image.jpg" alt="Mohamed Nashaat" class="avatar-img" />
-
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="status"><i></i>available for opportunities</div>
       <h1>Mohamed Nashaat</h1>
-
-      <p class="role">NOC Engineer</p>
-
-      <hr class="accent-rule" />
-
-      <div class="status-tag">
-        <span class="dot"></span>
-        available for opportunities
+      <p class="role">Network Engineer &middot; Cisco &amp; Fortinet</p>
+      <p class="lead">I design, secure, and troubleshoot enterprise networks, and I'm building my NOC operations and Ansible automation skills. Based in Cairo, Egypt &middot; ready to relocate.</p>
+      <div class="btns">
+        <a href="Mohamed_Nashaat_Network_CV.docx" download class="btn primary"><i><svg class="ic" aria-hidden="true"><use href="#s-download"/></svg></i> Download resume</a>
+        <a href="#contact" class="btn ghost"><i><svg class="ic" aria-hidden="true"><use href="#s-paper-plane"/></svg></i> Get in touch</a>
       </div>
-
-      <p class="loc">
-        Gharbia, Tanta, Egypt &middot; ready to relocate<br />
-        Bachelor of Engineering – Communications and Computer —  Mansoura University - 2021–2026 •  Grade:3.27 / 4.00 (Very Good) 
- | Graduation Project: A+
-      </p>
-
-      <a href="Mohamed_Nashaat_CV.docx" download id="downloadCV">
-        <i class="fas fa-arrow-down"></i>
-        Download resume
-      </a>
-
-      <div class="side-contact">
-        <a href="mailto:mohamednashaat424@gmail.com">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-
-        <a href="tel:+201001564034">
-          <i class="fas fa-phone"></i> +20 100 156 4034
-        </a>
-
-        <a href="https://wa.me/201001564034" target="_blank">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-
-        <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-
-        <a href="https://github.com/Mohamednashaat932" target="_blank">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-
-        <a href="https://facebook.com/muhamed.nashaat.2025" target="_blank">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-
-        <a href="https://instagram.com/themu7md27" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-
-        <a href="https://tryhackme.com/p/0xNyteW0lf" target="_blank">
-          <img src="https://tryhackme.com/img/favicon.png" alt="">
-          TryHackMe
-        </a>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/Mohamednashaat932" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a href="https://wa.me/201001564034" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        <a href="mailto:mohamednashaat424@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <a href="https://tryhackme.com/p/0xNyteW0lf" target="_blank" rel="noopener" aria-label="TryHackMe"><img src="https://tryhackme.com/img/favicon.png" alt=""></a>
       </div>
-
-    </aside>
-
-    <main>
-
-      <section id="experience">
-
-        <div class="sec-head">
-          <span class="sec-num">02</span>
-          <h2>Professional experience</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="timeline">
-
-          <div class="experience-item">
-            <h3>NOC Automation Trainee</h3>
-            <p class="role-tag">National Telecommunication Institute (NTI)</p>
-            <p class="meta">July 2026 – Present</p>
-
-            <ul>
-              <li>Completed intensive training in network automation, NOC operations, and modern network infrastructure, covering Cisco CCNP-level routing and switching (ENCOR/ENARSI), VLANs, OSPF, EIGRP, BGP, ACLs, NAT, and SD-WAN concepts.</li>
-              <li>Gained hands-on experience in Python-based network automation, Ansible, Linux (Red Hat), cloud computing, virtualization, AWS fundamentals, and network DevOps tools through practical labs and simulations.</li>
-              <li>Developed professional skills in communication, teamwork, leadership, problem-solving, project management, and technical presentation through career development activities and a capstone project.</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <p class="grp-title" style="margin-top:1.6rem;">Internships</p>
-
-        <div class="timeline">
-
-          <div class="experience-item">
-            <h3>Petrobel (Belayim Petroleum Company)</h3>
-            <p class="role-tag">Summer Internship</p>
-            <p class="meta">Abu Rudeis, South Sinai &middot; 13–19 September 2025</p>
-
-            <ul>
-              <li>Attended H₂S safety briefing on a drilling rig visit, learned emergency response procedures, and practiced using breathing apparatus.</li>
-              <li>Observed communication systems and radio operations used for field coordination at the Central and Radio Stations.</li>
-              <li>Learned hazard assessment and safe-work protocols applied in oil &amp; gas sites (HSE).</li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <h3>GUPCO (Gulf of Suez Petroleum Company)</h3>
-            <p class="role-tag">Summer Internship</p>
-            <p class="meta">Ras Shukeir, Gulf of Suez &middot; 19–25 July 2025</p>
-
-            <p style="font-size:0.96rem; line-height:1.6; color:var(--ink); margin:0 0 0.7rem;">
-              Participated in a comprehensive technical training covering both Telecommunication Systems and Information Technology Infrastructure, with hands-on exposure to real-world systems used in oil and gas field operations.
-            </p>
-
-            <ul>
-              <li><strong>PABX:</strong> learned how the company's internal landline system operates, including routing calls and managing extensions.</li>
-              <li><strong>Microwave communication systems:</strong> observed the setup and operation of microwave links used for long-distance data transmission between company sites.</li>
-              <li><strong>Navigation &amp; automation systems:</strong> gained insight into automated control systems and marine/field navigation technologies.</li>
-              <li><strong>TV monitoring station:</strong> explored internal television broadcasting systems used for monitoring and communication within the company.</li>
-              <li><strong>Network and cybersecurity:</strong> understood the security protocols implemented to protect company data and network infrastructure.</li>
-              <li><strong>Data center operations:</strong> trained on the components of a data center including servers, storage systems, power and cooling units.</li>
-              <li><strong>Fiber optic cable splicing:</strong> practiced the fusion splicing of fiber optic cables and terminating/connecting them to patch panels.</li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <h3>Information Technology Institute (ITI)</h3>
-            <p class="role-tag">Trainee</p>
-            <p class="meta">Online &middot; May 2025 – September 2025</p>
-
-            <ul>
-              <li>Completed structured technical training in IT infrastructure and networking fundamentals.</li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <h3>National Telecommunication Institute (NTI)</h3>
-            <p class="role-tag">Trainee</p>
-            <p class="meta">Mansoura &middot; March 2025 – April 2025</p>
-
-            <ul>
-              <li>Attended hands-on sessions on network configuration, communication protocols, and telecom infrastructure.</li>
-              <li>Applied theoretical knowledge in real lab scenarios and simulations.</li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <h3>Digital Egypt Pioneers Program (MCIT)</h3>
-            <p class="role-tag">Trainee</p>
-            <p class="meta">Ministry of Communications and Information Technology, Mansoura &middot; April 2024 – September 2024</p>
-
-            <ul>
-              <li>Gained foundational skills in cybersecurity, networking, and programming.</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section id="education">
-
-        <div class="sec-head">
-          <span class="sec-num">03</span>
-          <h2>Education</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="edu-item">
-          <strong>Bachelor of Engineering &mdash; Communications and Computer</strong>
-          &mdash; Mansoura University<br>
-
-          <span class="edu-date">September 2021 – July 2026</span>
-          &middot; Grade: 3.27 / 4.00 (Very Good)<br>
-
-          Graduation Project grade: A+
-        </div>
-
-      </section>
-
-
-      <section id="skills">
-
-        <div class="sec-head">
-          <span class="sec-num">04</span>
-          <h2>Technical skills</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="skill-group">
-          <div class="grp-title">Networking &amp; infrastructure</div>
-
-          <div class="skill-chips">
-            <span>CCNA</span>
-            <span>Incident troubleshooting</span>
-            <span>OSPF</span>
-            <span>EIGRP</span>
-            <span>VLANs</span>
-            <span>Subnetting</span>
-            <span>STP</span>
-            <span>Inter-VLAN routing</span>
-            <span>ACLs</span>
-            <span>NAT</span>
-            <span>TCP/IP</span>
-            <span>LAN/WAN</span>
-            <span>EVE-NG</span>
-            <span>GNS3</span>
-            <span>Packet Tracer</span>
-            <span>Physical Cisco devices</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="grp-title">Cloud &amp; Linux</div>
-
-          <div class="skill-chips">
-            <span>AWS (EC2, S3, IAM, VPC, Security Groups)</span>
-            <span>AWS Cloud Foundations Certified</span>
-            <span>Red Hat Linux</span>
-            <span>Windows Server Administration</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="grp-title">Programming &amp; tools</div>
-
-          <div class="skill-chips">
-            <span>Python</span>
-            <span>Wireshark</span>
-            <span>Burp Suite</span>
-            <span>Microsoft Office</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="grp-title">Languages</div>
-
-          <div class="skill-chips">
-            <span>Arabic (Native)</span>
-            <span>English</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="grp-title">Soft skills</div>
-
-          <div class="skill-chips soft-chips">
-            <span>Analytical thinking</span>
-            <span>Problem solving</span>
-            <span>Communication skills</span>
-            <span>Team collaboration</span>
-            <span>Adaptability</span>
-            <span>Continuous learning</span>
-          </div>
-        </div>
-
-      </section>
-
-
-      <section id="projects">
-
-        <div class="sec-head">
-          <span class="sec-num">05</span>
-          <h2>Academic projects</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="project-item">
-          <h3>Secure and Resilient Enterprise Network</h3>
-          <p class="role-tag">Graduation Project</p>
-
-          <ul>
-            <li>Designed and implemented a secure multi-site enterprise network using GNS3 and FortiGate.</li>
-            <li>Validated security controls through connectivity and failover testing.</li>
-          </ul>
-        </div>
-
-        <div class="project-item">
-          <h3>Enterprise Network Infrastructure</h3>
-          <p class="role-tag">GNS3 &middot; OSPF &middot; PAT &middot; VLANs</p>
-
-          <ul>
-            <li>Configured PAT (NAT Overload) on border routers to enable all private hosts to share a single public IP, conserving address space and enforcing security. Deployed OSPF as the dynamic routing protocol for automatic route advertisement and optimal path selection across all sites.</li>
-
-            <li>Applied inter-VLAN routing via router-on-a-stick with 802.1Q trunking, and validated full Layer 2-to-Layer 3 operation through ARP analysis, ping, and traceroute testing.</li>
-          </ul>
-        </div>
-
-        <div class="project-item">
-          <h3>Engibedia</h3>
-          <p class="role-tag">Graduation Project &middot; Educational Learning Platform</p>
-
-          <ul>
-            <li>Developed a full-stack e-learning platform for managing online courses and educational content.</li>
-            <li>Implemented user authentication and role-based access (students, instructors, admins).</li>
-            <li>Enabled video streaming, PDF sharing, quizzes, and course enrollment.</li>
-            <li>Designed a responsive and user-friendly interface with a secure backend.</li>
-          </ul>
-        </div>
-
-      </section>
-
-
-      <section id="certifications">
-
-        <div class="sec-head">
-          <span class="sec-num">06</span>
-          <h2>Certifications &amp; courses</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <div class="cert-list">
-
-          <div class="cert-row">
-            <div>
-              <div class="cert-name">NOC Automation Track</div>
-              <div class="cert-issuer">National Telecommunication Institute (NTI)</div>
-            </div>
-
-            <div class="cert-date">2026</div>
-          </div>
-
-          <div class="cert-row">
-            <div>
-              <div class="cert-name">AWS Cloud Foundations Certificate</div>
-              <div class="cert-issuer">Amazon Web Services</div>
-            </div>
-
-            <div class="cert-date">2024</div>
-          </div>
-
-          <div class="cert-row">
-            <div>
-              <div class="cert-name">CCNA: Enterprise Networking, Security, and Automation</div>
-              <div class="cert-issuer">Cisco Networking Academy</div>
-            </div>
-          </div>
-
-          <div class="cert-row">
-            <div>
-              <div class="cert-name">CCNA: Switching, Routing, and Wireless Essentials</div>
-              <div class="cert-issuer">Cisco Networking Academy</div>
-            </div>
-          </div>
-
-          <div class="cert-row">
-            <div>
-              <div class="cert-name">CCNA: Introduction to Networks</div>
-              <div class="cert-issuer">Cisco Networking Academy</div>
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section id="contact">
-
-        <div class="sec-head">
-          <span class="sec-num">07</span>
-          <h2>Contact</h2>
-          <span class="sec-line"></span>
-        </div>
-
-        <p class="intro">
-          Open to NOC, network operations, and junior network engineering roles.
-          Reach out directly or send a message below.
-        </p>
-
-        <form action="https://formspree.io/f/xnndybyp" method="POST">
-
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="_replyto" required placeholder="mohamednashaat424@gmail.com" />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
-
-          <button type="submit">Send message</button>
-
-        </form>
-
-      </section>
-
-
-      <footer>
-        &copy; <span id="year">2026</span>
-        Mohamed Nashaat. All rights reserved.
-      </footer>
-
-    </main>
+    </div>
+    <div class="photo"><img src="image.jpg" alt="Mohamed Nashaat" class="avatar-img" /></div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>3.27 / 4.0</b><span>B.Eng. GPA &middot; Very Good</span></div>
+    <div class="stat"><b>A+</b><span>Graduation project grade</span></div>
+    <div class="stat"><b>Cisco + Fortinet</b><span>Hands-on platforms</span></div>
+    <div class="stat"><b>NOC &amp; Ansible</b><span>Training at NTI, 2026</span></div>
+  </div>
+</div>
+
+<main>
+
+<section id="about"><div class="wrap">
+  <div class="eyebrow">01 &middot; About</div>
+  <h2>Professional summary</h2>
+  <div class="about">
+    <div class="card"><p>Junior Network Engineer with hands-on experience in enterprise routing, switching, and firewall configuration across Cisco and Fortinet platforms. Experienced in designing and validating secure multi-site enterprise networks using GNS3 and FortiGate, including failover testing. Skilled in troubleshooting, with growing skills in NOC operations and Ansible automation. Seeking a Network Engineer, NOC Engineer, or Network Support role where I can apply my networking and automation skills to keep enterprise networks secure and reliable.</p></div>
+    <div class="card focus">
+      <div><i><svg class="ic" aria-hidden="true"><use href="#s-route"/></svg></i>Enterprise routing &amp; switching</div>
+      <div><i><svg class="ic" aria-hidden="true"><use href="#s-shield-halved"/></svg></i>FortiGate firewall &amp; security</div>
+      <div><i><svg class="ic" aria-hidden="true"><use href="#s-gears"/></svg></i>NOC operations &amp; automation</div>
+      <div><i><svg class="ic" aria-hidden="true"><use href="#s-bug"/></svg></i>Fault troubleshooting</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="eyebrow">02 &middot; Experience</div>
+  <h2>Professional experience</h2>
+  <div class="tl">
+
+    <div class="job now card">
+      <div class="job-top">
+        <div><h3>NOC Automation Trainee</h3><div class="org">National Telecommunication Institute (NTI)</div></div>
+        <span class="date">July 2026 &ndash; Present</span>
+      </div>
+      <ul class="points">
+        <li>Training in network automation, NOC operations, and modern network infrastructure, covering Cisco CCNP-level routing and switching (ENCOR/ENARSI).</li>
+        <li>Hands-on practice with Python-based network automation, Ansible, Linux (Red Hat), virtualization, AWS fundamentals, and network DevOps tools through labs and simulations.</li>
+        <li>Working on a capstone project as part of the program.</li>
+      </ul>
+      <div class="chips"><span>ENCOR</span><span>ENARSI</span><span>OSPF</span><span>EIGRP</span><span>BGP</span><span>SD-WAN</span><span>Python</span><span>Ansible</span><span>RHEL</span></div>
+    </div>
+
+    <div class="job card">
+      <div class="job-top">
+        <div><h3>Network Trainee</h3><div class="org">GUPCO (Gulf of Suez Petroleum Company) &middot; Ras Shukeir</div></div>
+        <span class="date">July 2025</span>
+      </div>
+      <ul class="points">
+        <li>Trained on enterprise network infrastructure and fault troubleshooting.</li>
+        <li><strong>Data center operations:</strong> servers, storage systems, and power and cooling units.</li>
+        <li><strong>Network security:</strong> studied the protocols used to protect company data and network infrastructure.</li>
+        <li><strong>Microwave links:</strong> observed the setup and operation of long-distance data links between sites.</li>
+        <li><strong>Fiber optics:</strong> practiced fusion splicing and termination on patch panels.</li>
+        <li><strong>Telephony (PABX):</strong> learned how the internal system routes calls and manages extensions.</li>
+      </ul>
+      <div class="chips"><span>Data center</span><span>Fiber splicing</span><span>Microwave</span><span>PABX</span><span>Troubleshooting</span></div>
+    </div>
+
+    <div class="job card">
+      <div class="job-top">
+        <div><h3>Network Trainee</h3><div class="org">Petrobel (Belayim Petroleum Company) &middot; Abu Rudeis</div></div>
+        <span class="date">September 2025</span>
+      </div>
+      <ul class="points">
+        <li>Trained on data center infrastructure and troubleshooting network issues.</li>
+        <li>Observed the communication systems and radio networks used for field coordination between the Central and Radio Stations.</li>
+        <li>Learned how network and communication links are kept reliable across remote oil &amp; gas sites.</li>
+      </ul>
+      <div class="chips"><span>Data center</span><span>Radio networks</span><span>Troubleshooting</span></div>
+    </div>
 
   </div>
+</div></section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<section id="skills"><div class="wrap">
+  <div class="eyebrow">03 &middot; Skills</div>
+  <h2>Technical skills</h2>
+  <div class="grid3">
+    <div class="card skill" style="grid-column:span 3">
+      <h3><i><svg class="ic" aria-hidden="true"><use href="#s-network-wired"/></svg></i>Routing &amp; switching</h3>
+      <div class="chips"><span>OSPF</span><span>EIGRP</span><span>BGP</span><span>MPLS</span><span>SD-WAN</span><span>VLANs</span><span>Inter-VLAN routing</span><span>STP</span><span>HSRP</span><span>EtherChannel</span><span>VTP</span><span>VRF</span><span>Subnetting</span><span>TCP/IP</span><span>DHCP</span><span>NAT</span><span>ACLs</span></div>
+    </div>
+    <div class="card skill"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-shield-halved"/></svg></i>Security</h3><div class="chips"><span>FortiGate Firewall</span><span>Basic network security</span><span>Penetration testing fundamentals</span></div></div>
+    <div class="card skill"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-wifi"/></svg></i>Services &amp; wireless</h3><div class="chips"><span>DNS</span><span>DHCP</span><span>Wireless LAN fundamentals</span></div></div>
+    <div class="card skill"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-server"/></svg></i>Vendors &amp; OS</h3><div class="chips"><span>Cisco</span><span>Fortinet (FortiGate)</span><span>RHEL Linux</span><span>Windows Server</span></div></div>
+    <div class="card skill" style="grid-column:span 2"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-diagram-project"/></svg></i>Network infrastructure &amp; tools</h3><div class="chips"><span>GNS3</span><span>EVE-NG</span><span>Cisco Packet Tracer</span><span>VMware</span></div></div>
+    <div class="card skill"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-language"/></svg></i>Languages</h3><div class="chips"><span>Arabic (Mother tongue)</span><span>English (Good)</span></div></div>
+    <div class="card skill" style="grid-column:span 3"><h3><i><svg class="ic" aria-hidden="true"><use href="#s-users"/></svg></i>Soft skills</h3><div class="chips"><span>Analytical thinking</span><span>Problem solving</span><span>Communication skills</span><span>Team collaboration</span><span>Adaptability</span><span>Continuous learning</span></div></div>
+  </div>
+</div></section>
 
+<section id="projects"><div class="wrap">
+  <div class="eyebrow">04 &middot; Projects</div>
+  <h2>Academic projects</h2>
+  <div class="projects">
+    <div class="card proj">
+      <div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-shield-halved"/></svg></i></div>
+      <small>Graduation Project 2</small>
+      <h3>Secure and Resilient Enterprise Network</h3>
+      <ul class="points"><li>Designed and executed a secure multi-site enterprise network using GNS3 and FortiGate.</li><li>Validated security controls through connectivity and failover testing.</li></ul>
+      <div class="chips"><span>GNS3</span><span>FortiGate</span><span>Failover</span></div>
+    </div>
+    <div class="card proj">
+      <div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-sitemap"/></svg></i></div>
+      <small>Network lab</small>
+      <h3>Enterprise Network Infrastructure</h3>
+      <ul class="points"><li>Configured PAT (NAT Overload) on border routers so all private hosts share a single public IP.</li><li>Deployed OSPF for automatic route advertisement and optimal path selection across all sites.</li><li>Enforced inter-VLAN routing using router-on-a-stick with 802.1Q trunking, validated through ARP analysis, ping, and traceroute.</li></ul>
+      <div class="chips"><span>GNS3</span><span>OSPF</span><span>PAT</span><span>VLANs</span></div>
+    </div>
+    <div class="card proj">
+      <div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-graduation-cap"/></svg></i></div>
+      <small>Graduation Project 1</small>
+      <h3>Engibedia &ndash; Educational Learning Platform</h3>
+      <ul class="points"><li>Developed a full-stack e-learning platform with role-based access (students, instructors, admins), video streaming, quizzes, and course enrollment.</li></ul>
+      <div class="chips"><span>Full-stack</span><span>Role-based access</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+  <div class="eyebrow">05 &middot; Credentials</div>
+  <h2>Certifications &amp; courses</h2>
+  <div class="certs">
+    <div class="card cert hot"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-ticket"/></svg></i></div><div><b>FortiGate Firewall &ndash; official exam voucher secured</b><small>Fortinet</small><span class="date">In progress</span></div></div>
+    <div class="card cert hot"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-shield-halved"/></svg></i></div><div><b>FortiGate Firewall</b><small>Fortinet Training Institute (Official Fortinet Course)</small><span class="date">October 2026</span></div></div>
+    <div class="card cert"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-redhat"/></svg></div><div><b>Red Hat System Administration I (RH124)</b><small>Self-study</small><span class="date">September 2026</span></div></div>
+    <div class="card cert"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-windows"/></svg></div><div><b>Windows Server 2022</b><small>Self-study</small><span class="date">February 2026</span></div></div>
+    <div class="card cert"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-user-secret"/></svg></i></div><div><b>ITI Penetration Testing Bootcamp</b><small>Information Technology Institute (ITI)</small><span class="date">Oct &ndash; Nov 2025</span></div></div>
+    <div class="card cert"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-user-secret"/></svg></i></div><div><b>Penetration Testing</b><small>Cyber Talent, Online</small><span class="date">May &ndash; Sep 2025</span></div></div>
+    <div class="card cert"><div class="ico"><svg class="ic" aria-hidden="true"><use href="#i-aws"/></svg></div><div><b>AWS Cloud Foundations Certificate</b><small>Amazon Web Services</small><span class="date">April 2025</span></div></div>
+    <div class="card cert"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-network-wired"/></svg></i></div><div><b>CCNA: Enterprise Networking, Switching, Routing &amp; Wireless Essentials</b><small>National Telecommunication Institute (NTI)</small><span class="date">Mar &ndash; Apr 2025</span></div></div>
+    <div class="card cert"><div class="ico"><i><svg class="ic" aria-hidden="true"><use href="#s-bug"/></svg></i></div><div><b>Vulnerability Analyst / Penetration Tester</b><small>Digital Egypt Pioneers Program (MCIT)</small><span class="date">Apr &ndash; Sep 2024</span></div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="eyebrow">06 &middot; Contact</div>
+  <h2>Let's talk</h2>
+  <div class="contact">
+    <div>
+      <p class="intro">Open to Network Engineer, NOC Engineer, and Network Support roles. Reach out directly or send a message.</p>
+      <div class="info">
+        <a href="mailto:mohamednashaat424@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>mohamednashaat424@gmail.com</a>
+        <a href="tel:+201001564034"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>+20 100 156 4034</a>
+        <a href="https://wa.me/201001564034" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a href="https://www.linkedin.com/in/muhamednashaat" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+        <a href="https://github.com/Mohamednashaat932" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+      </div>
+    </div>
+    <form class="card" action="https://formspree.io/f/xnndybyp" method="POST">
+      <div><label for="name">Name</label><input type="text" id="name" name="name" required placeholder="Your name" /></div>
+      <div><label for="email">Email</label><input type="email" id="email" name="_replyto" required placeholder="you@example.com" /></div>
+      <div><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea></div>
+      <button type="submit">Send message</button>
+    </form>
+  </div>
+</div></section>
+
+</main>
+
+<footer>&copy; <span id="year">2026</span> Mohamed Nashaat. All rights reserved.</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
